@@ -1337,7 +1337,7 @@ function submitOrder() {
     setTimeout(()=>document.getElementById('order-email').style.borderColor='',1200);
     return;
   }
-  const stripeUrl = `https://buy.stripe.com/test_5kQ5kEehP0Figjp6up83C00?prefilled_email=${encodeURIComponent(email)}&locale=auto`;
+  const stripeUrl = `https://buy.stripe.com/aFafZh51KenUgmvfql5J600?prefilled_email=${encodeURIComponent(email)}&locale=auto`;
   closeOrder();
   window.location.href = stripeUrl;
 }
