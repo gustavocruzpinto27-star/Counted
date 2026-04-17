@@ -334,8 +334,8 @@ input:focus {
 .room-scene {
   position: relative; overflow: hidden;
   border-radius: 20px; width: 100%;
-  aspect-ratio: 4 / 3;
-  background: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1400&q=85&fit=crop&crop=top') center 20% / cover no-repeat;
+  aspect-ratio: 16 / 9;
+  background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=85&fit=crop') center 35% / cover no-repeat;
   box-shadow: 0 32px 80px rgba(0,0,0,.5);
   user-select: none; -webkit-user-select: none;
 }
@@ -396,10 +396,23 @@ input:focus {
 
 /* Poster on wall */
 .room-poster-area {
-  position: absolute; top: 4%; left: 50%;
+  position: absolute; top: 5%; left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
+/* Poster scaled down to look like real wall art */
+.room-scene .poster-frame {
+  max-width: 148px;
+}
+.room-scene .poster-inner {
+  padding: 13px 10px 10px;
+}
+.room-scene .p-names { font-size: 1rem; }
+.room-scene .p-hero-num { font-size: 1.3rem; letter-spacing: -.5px; }
+.room-scene .p-grid { gap: 5px 10px; }
+.room-scene .p-stat-num { font-size: .85rem; }
+.room-scene .p-quote { font-size: .6rem; }
+.room-scene .p-hero { margin: 2px 0 0; }
 
 .poster-wrap {
   position: relative; display: inline-block;
