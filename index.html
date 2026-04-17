@@ -597,6 +597,63 @@ input:focus {
 .quiz-opt-sub { font-size:.75rem; color:var(--muted); margin-top:2px; }
 .quiz-opt-arrow { color:var(--muted); font-size:.8rem; flex-shrink:0; }
 
+/* ─── PAYWALL ────────────────────────────── */
+.locked-wall {
+  position: relative; margin-bottom: 64px;
+}
+.locked-content {
+  filter: blur(9px);
+  user-select: none; pointer-events: none;
+  opacity: .55;
+  max-height: 520px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.9) 0%, transparent 75%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.9) 0%, transparent 75%);
+}
+.unlock-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(180deg, transparent 0%, var(--bg) 28%);
+  padding: 140px 0 0;
+  text-align: center; z-index: 10;
+}
+.unlock-card {
+  background: linear-gradient(135deg, rgba(232,115,106,.07) 0%, rgba(201,168,76,.05) 100%);
+  border: 1px solid rgba(232,115,106,.25);
+  border-radius: 28px; padding: 44px 40px 40px;
+  max-width: 520px; margin: 0 auto;
+  position: relative; overflow: hidden;
+}
+.unlock-card::before {
+  content:''; position:absolute; inset:-40%;
+  background: radial-gradient(circle at 50% 0%, rgba(201,168,76,.06) 0%, transparent 55%);
+  pointer-events:none;
+}
+.unlock-card > * { position:relative; z-index:1; }
+.unlock-icon { font-size: 2rem; margin-bottom: 16px; display:block; }
+.unlock-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 10px;
+}
+.unlock-card > p {
+  font-size: .88rem; color: var(--muted);
+  line-height: 1.75; max-width: 360px;
+  margin: 0 auto 28px;
+}
+.unlock-email-row {
+  display: flex; gap: 10px; max-width: 400px;
+  margin: 0 auto 16px; flex-wrap: wrap;
+}
+.unlock-email-row input {
+  flex: 1; min-width: 180px;
+}
+.unlock-trust {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-top: 14px;
+}
+.unlock-trust-item {
+  font-size: .72rem; color: var(--muted);
+  display: flex; align-items: center; gap: 5px;
+}
+
 /* ─── FAQ ───────────────────────────────── */
 .faq {
   margin-top: 64px; padding-top: 64px;
@@ -786,106 +843,78 @@ input:focus {
 
     <div class="hero-box">
       <div class="hero-num" id="hero-num">0</div>
-      <div class="hero-lbl">Days of choosing each other</div>
+      <div class="hero-lbl">Combined heartbeats — for each other</div>
       <div class="hero-sub" id="hero-sub"></div>
     </div>
 
-    <div class="ann-ring">
-      <div class="ann-card">
-        <div class="ann-num" id="next-ann-days">—</div>
-        <div class="ann-lbl">Days to next anniversary</div>
-      </div>
-      <div class="ann-card">
-        <div class="ann-num" id="yrs-together">—</div>
-        <div class="ann-lbl">Years together</div>
-      </div>
-      <div class="ann-card">
-        <div class="ann-num" id="seasons">—</div>
-        <div class="ann-lbl">Seasons shared</div>
-      </div>
-    </div>
-
-    <div class="grid" id="grid"></div>
-
-    <div class="timeline" id="timeline-section">
-      <h3>Milestones you've already passed ✨</h3>
-      <div id="timeline"></div>
-    </div>
-
-    <div class="quote-wrap">
-      <p class="quote-text" id="quote"></p>
-    </div>
-
-    <!-- Poster Preview -->
-    <div class="poster-section">
-      <p class="poster-section-label">Your poster preview</p>
-      <h3>This is what they'll hang on the wall</h3>
-      <p>Every number is real. Every number is yours.</p>
-      <div class="poster-showcase">
-        <div class="showcase-wire"></div>
-        <div class="poster-wrap">
-          <div class="poster-frame">
-            <div class="poster-inner" id="poster-preview">
-              <div class="p-eyebrow">A Love Story</div>
-              <div class="p-names" id="p-names">Ana &amp; João</div>
-              <div class="p-date-line" id="p-dateline">Since — · — · —</div>
-
-              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-              <div class="p-hero">
-                <div class="p-hero-num" id="p-hb">—</div>
-                <div class="p-hero-lbl">Heartbeats for each other</div>
+    <!-- LOCKED CONTENT -->
+    <div class="locked-wall">
+      <div class="locked-content">
+        <div class="ann-ring">
+          <div class="ann-card">
+            <div class="ann-num" id="next-ann-days">—</div>
+            <div class="ann-lbl">Days to next anniversary</div>
+          </div>
+          <div class="ann-card">
+            <div class="ann-num" id="yrs-together">—</div>
+            <div class="ann-lbl">Years together</div>
+          </div>
+          <div class="ann-card">
+            <div class="ann-num" id="seasons">—</div>
+            <div class="ann-lbl">Seasons shared</div>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="timeline" id="timeline-section">
+          <h3>Milestones you've already passed ✨</h3>
+          <div id="timeline"></div>
+        </div>
+        <div class="poster-section">
+          <div class="poster-showcase">
+            <div class="showcase-wire"></div>
+            <div class="poster-wrap">
+              <div class="poster-frame">
+                <div class="poster-inner" id="poster-preview">
+                  <div class="p-eyebrow">A Love Story</div>
+                  <div class="p-names" id="p-names">Ana &amp; João</div>
+                  <div class="p-date-line" id="p-dateline">Since — · — · —</div>
+                  <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+                  <div class="p-hero">
+                    <div class="p-hero-num" id="p-hb">—</div>
+                    <div class="p-hero-lbl">Heartbeats for each other</div>
+                  </div>
+                  <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+                  <div class="p-grid" id="p-grid"></div>
+                  <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+                  <div class="p-quote" id="p-quote-line"></div>
+                  <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+                  <div class="p-footer">Us · In Numbers · Counted™</div>
+                </div>
               </div>
-
-              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-              <div class="p-grid" id="p-grid"></div>
-
-              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-              <div class="p-quote" id="p-quote-line"></div>
-
-              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-              <div class="p-footer">Us · In Numbers · Counted™</div>
+              <div class="poster-badge">Your poster</div>
             </div>
           </div>
-          <div class="poster-badge">Your poster</div>
         </div>
       </div>
-      <div class="share-row">
-        <button class="btn-share" onclick="shareStory()">
-          <span>↗</span> Share your story
-        </button>
-        <button class="btn-share" onclick="copyLink()">
-          <span>⎘</span> Copy link
-        </button>
-      </div>
-    </div>
 
-    <!-- CTA -->
-    <div class="cta">
-      <h3>Frame your love story</h3>
-      <p>A premium A3 poster with your unique numbers — beautifully typeset, printed and delivered to your door. The gift they'll hang on the wall forever.</p>
-      <div class="spec-chips">
-        <div class="chip">Format <strong>A3 · 420×297mm</strong></div>
-        <div class="chip">Paper <strong>300gsm Matte</strong></div>
-        <div class="chip">Finish <strong>Gold foil accents</strong></div>
-        <div class="chip">Ships <strong>3–5 days</strong></div>
-      </div>
-      <div class="cta-price-block">
-        <div class="price-tag">€29</div>
-        <div class="price-note">Free shipping worldwide · 30-day guarantee</div>
-      </div>
-      <div class="cta-btns">
-        <button class="btn-primary" style="max-width:280px;" onclick="openOrder()">Order Our Poster →</button>
-        <button class="btn-ghost" onclick="reset()">Try Different Names</button>
-      </div>
-      <div class="trust-row">
-        <div class="trust-item"><span class="trust-icon">🔒</span> Secure payment</div>
-        <div class="trust-item"><span class="trust-icon">✦</span> Made to order</div>
-        <div class="trust-item"><span class="trust-icon">↩</span> 30-day returns</div>
-        <div class="trust-item"><span class="trust-icon">🌍</span> Ships worldwide</div>
+      <!-- UNLOCK OVERLAY -->
+      <div class="unlock-overlay">
+        <div class="unlock-card">
+          <span class="unlock-icon">🔒</span>
+          <h3>Your numbers are ready</h3>
+          <p>How many full moons? How many hugs? How many times did you say "I love you"? Unlock all your stats — and get your personalised poster printed and delivered.</p>
+          <div class="unlock-email-row">
+            <input type="email" id="unlock-email" placeholder="your@email.com">
+            <button class="btn-primary" style="white-space:nowrap;" onclick="goToStripe()">Unlock + Poster — €29 →</button>
+          </div>
+          <button class="btn-ghost" style="margin: 0 auto; display:block; font-size:.75rem;" onclick="reset()">← Try different names</button>
+          <div class="unlock-trust">
+            <span class="unlock-trust-item">🔒 Secure payment</span>
+            <span class="unlock-trust-item">✦ Made just for you</span>
+            <span class="unlock-trust-item">↩ 30-day guarantee</span>
+            <span class="unlock-trust-item">🌍 Ships worldwide</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1180,7 +1209,7 @@ function generate() {
   document.getElementById('since-str').textContent =
     `Together since ${state.sinceFormatted} · A ${dow} · Under a ${moonName}`;
   document.getElementById('hero-sub').textContent =
-    `${fmt(weeks)} weeks · ${fmt(months)} months · ${yrs} year${yrs!==1?'s':''} of choosing each other`;
+    `${fmt(days)} days · ${fmt(weeks)} weeks · ${yrs} year${yrs!==1?'s':''} of choosing each other`;
 
   // Ann ring (animated)
   setTimeout(()=> animCount(document.getElementById('next-ann-days'), daysAnn===0?0:daysAnn, 1200), 400);
@@ -1312,33 +1341,20 @@ function generate() {
   document.getElementById('results').style.display = 'block';
   scrollTo(0,0);
 
-  setTimeout(()=> animCount(document.getElementById('hero-num'), days, 2600), 200);
+  setTimeout(()=> animCount(document.getElementById('hero-num'), totalHB, 2800), 200);
 }
 
-/* ── ORDER MODAL ─────────────────────────── */
-function openOrder() {
-  document.getElementById('m-names').textContent = `${state.n1} & ${state.n2}`;
-  document.getElementById('m-date').textContent = state.sinceFormatted;
-  document.getElementById('overlay').classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-function closeOrder() {
-  document.getElementById('overlay').classList.remove('show');
-  document.body.style.overflow = '';
-}
-function closeOrderIfOutside(e) {
-  if (e.target === document.getElementById('overlay')) closeOrder();
-}
-function submitOrder() {
-  const email = document.getElementById('order-email').value.trim();
-  const country = document.getElementById('order-country').value.trim();
+/* ── STRIPE CHECKOUT ─────────────────────── */
+function goToStripe() {
+  const email = document.getElementById('unlock-email').value.trim();
   if (!email || !email.includes('@')) {
-    document.getElementById('order-email').style.borderColor='#e05555';
-    setTimeout(()=>document.getElementById('order-email').style.borderColor='',1200);
+    const el = document.getElementById('unlock-email');
+    el.style.borderColor='#e05555';
+    el.focus();
+    setTimeout(()=>el.style.borderColor='',1400);
     return;
   }
   const stripeUrl = `https://buy.stripe.com/aFafZh51KenUgmvfql5J600?prefilled_email=${encodeURIComponent(email)}&locale=auto`;
-  closeOrder();
   window.location.href = stripeUrl;
 }
 

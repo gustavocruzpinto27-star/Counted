@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Counted</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: #0c0809; color: #f0ece4;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 24px; text-align: center;
+}
+.card {
+  max-width: 520px; width: 100%;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(232,115,106,.2);
+  border-radius: 28px; padding: 56px 44px;
+}
+.icon { font-size: 3.5rem; margin-bottom: 24px; display:block; }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 14px; line-height: 1.2;
+}
+h1 em { color: #f5a89f; font-style: italic; }
+p { color: #8a7a7a; font-size: .92rem; line-height: 1.8; margin-bottom: 12px; }
+p strong { color: #f0ece4; }
+.steps {
+  background: rgba(255,255,255,.03);
+  border-radius: 16px; padding: 24px 28px;
+  margin: 28px 0; text-align: left;
+}
+.step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  font-size: .88rem;
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(232,115,106,.15);
+  border: 1px solid rgba(232,115,106,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; color: #e8736a; flex-shrink: 0; margin-top: 1px;
+}
+.step-text { color: #8a7a7a; line-height: 1.6; }
+.step-text strong { color: #f0ece4; }
+a.btn {
+  display: inline-block; margin-top: 8px;
+  background: linear-gradient(135deg, #e8736a, #f0a09a);
+  color: #fff; text-decoration: none;
+  font-size: .82rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 16px 36px;
+  border-radius: 50px;
+  box-shadow: 0 4px 28px rgba(232,115,106,.35);
+}
+.footer { margin-top: 28px; font-size: .75rem; color: rgba(138,122,122,.5); }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="icon">💓</span>
+  <h1>Your poster is<br><em>on its way</em></h1>
+  <p>Payment confirmed. Thank you for your order.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Check your email</strong> — you'll receive a confirmation from us within a few hours with the details of your order.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>We'll reply asking for your names + anniversary date</strong> to personalise your poster exactly as you saw on the site.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Your poster is printed and shipped</strong> within 1–2 business days. Delivered in 3–5 days within Europe.</div>
+    </div>
+  </div>
+
+  <p>Questions? Reply to your receipt email or write to us at <strong>hello@counted.co</strong></p>
+
+  <a class="btn" href="/">← Back to Counted</a>
+
+  <div class="footer">Counted™ · Your love story, in numbers</div>
+</div>
+</body>
+</html>
