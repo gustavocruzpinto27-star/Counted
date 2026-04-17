@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Us in Numbers — Frame Your Love Story</title>
+<meta name="description" content="Enter your names and anniversary date. Discover the beautiful numbers of your relationship — then frame them forever as a premium art poster.">
+
+<!-- OG / Social sharing -->
+<meta property="og:title" content="Us in Numbers — Frame Your Love Story">
+<meta property="og:description" content="How many heartbeats? How many full moons? How many nights? Discover the hidden numbers of your relationship.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://counted-sage.vercel.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Us in Numbers — Frame Your Love Story">
+<meta name="twitter:description" content="The most personal gift you'll ever give. A premium poster with the unique numbers of your love story.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0809;
+  --rose: #e8736a;
+  --rose-l: #f5a89f;
+  --rose-d: rgba(232,115,106,0.18);
+  --gold: #c9a84c;
+  --gold-l: #f0d47a;
+  --cream: #f0ece4;
+  --muted: #8a7a7a;
+  --card: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.07);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+canvas#bg {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none; z-index:0;
+}
+.wrap {
+  position: relative; z-index:1;
+  max-width: 880px; margin: 0 auto; padding: 0 28px;
+}
+
+/* ─── ENTRY ─────────────────────────────── */
+#entry {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; gap: 0; padding: 60px 0;
+}
+.eyebrow {
+  font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--rose);
+  opacity: 0; animation: up .8s ease .2s forwards;
+  margin-bottom: 20px;
+}
+.entry-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 1.1; font-weight: 700;
+  opacity: 0; animation: up .8s ease .5s forwards;
+  margin-bottom: 20px;
+}
+.entry-h1 em { color: var(--rose-l); font-style: italic; }
+.entry-sub {
+  font-size: .96rem; color: var(--muted);
+  max-width: 400px; line-height: 1.8; margin: 0 auto;
+  opacity: 0; animation: up .8s ease .8s forwards;
+  margin-bottom: 16px;
+}
+
+/* Social proof bar */
+.social-proof {
+  display: flex; align-items: center; gap: 10px;
+  justify-content: center;
+  opacity: 0; animation: up .8s ease .9s forwards;
+  margin-bottom: 36px;
+}
+.sp-stars { color: var(--gold); font-size: .9rem; letter-spacing: 1px; }
+.sp-text { font-size: .8rem; color: var(--muted); }
+.sp-text strong { color: var(--cream); }
+
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--rose-d);
+  border-radius: 28px; padding: 40px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+  width: 100%; max-width: 480px;
+  opacity: 0; animation: up .8s ease 1s forwards;
+}
+.names-row {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px;
+  align-items: center;
+}
+.heart-sep { color: var(--rose); font-size: 1.2rem; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label {
+  font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--muted);
+}
+input[type="text"], input[type="date"], input[type="email"] {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--cream); color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; padding: 14px 18px;
+  border-radius: 12px; outline: none;
+  transition: border-color .3s, box-shadow .3s;
+  width: 100%;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder { color: var(--muted); }
+input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 4px rgba(232,115,106,.1);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #e8736a 0%, #f0a09a 100%);
+  color: #fff; font-family: 'Inter', sans-serif;
+  font-weight: 600; font-size: .82rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 17px; border: none; border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 28px rgba(232,115,106,.35);
+  transition: transform .2s, box-shadow .2s;
+  width: 100%;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(232,115,106,.45);
+}
+.btn-primary:active { transform: translateY(0); }
+.form-note {
+  font-size: .72rem; color: var(--muted);
+  text-align: center; margin-top: -8px;
+}
+
+/* How it works */
+.how {
+  display: flex; gap: 32px; justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0; animation: up .8s ease 1.2s forwards;
+  margin-top: 48px;
+}
+.how-step {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  max-width: 140px; text-align: center;
+}
+.how-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(232,115,106,.12);
+  border: 1px solid var(--rose-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .75rem; color: var(--rose); font-weight: 600;
+}
+.how-label { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+.how-divider {
+  width: 24px; height: 1px; background: var(--border);
+  align-self: center; margin-top: -20px;
+  flex-shrink: 0;
+}
+
+/* ─── RESULTS ───────────────────────────── */
+#results { display:none; padding: 80px 0 120px; }
+
+.r-header { text-align:center; margin-bottom: 64px; }
+.r-header .eyebrow { opacity:1; animation:none; margin-bottom:18px; }
+.r-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.2; margin-bottom: 14px;
+}
+.r-header h2 .names { color: var(--rose-l); }
+.r-header p { color: var(--muted); font-size: .92rem; line-height: 1.8; }
+
+/* Hero */
+.hero-box {
+  text-align: center; padding: 64px 40px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, rgba(232,115,106,.07) 0%, rgba(201,168,76,.04) 100%);
+  border: 1px solid var(--rose-d);
+  border-radius: 28px; position: relative; overflow: hidden;
+}
+.hero-box::before {
+  content:''; position:absolute; inset:-40%;
+  background: radial-gradient(circle at 50% 50%, rgba(232,115,106,.05) 0%, transparent 55%);
+  pointer-events:none;
+}
+.hero-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: var(--rose-l); line-height: 1;
+  letter-spacing: -4px; margin-bottom: 10px;
+}
+.hero-lbl {
+  font-size: .75rem; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--muted);
+}
+.hero-sub {
+  margin-top: 16px; font-size: .88rem; color: var(--muted);
+  font-style: italic;
+}
+
+/* Ann ring */
+.ann-ring {
+  display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.ann-card {
+  flex: 1; min-width: 160px;
+  padding: 28px 20px; text-align: center;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 22px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.ann-card:hover {
+  border-color: rgba(201,168,76,.2);
+  box-shadow: 0 8px 28px rgba(0,0,0,.25);
+}
+.ann-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem; color: var(--gold); line-height: 1;
+  margin-bottom: 8px;
+}
+.ann-lbl { font-size: .7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 13px; margin-bottom: 48px;
+}
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 22px; padding: 26px 22px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .5s, transform .5s, border-color .25s, box-shadow .25s;
+}
+.card.in { opacity: 1; transform: translateY(0); }
+.card:hover {
+  border-color: rgba(232,115,106,.18);
+  box-shadow: 0 10px 32px rgba(0,0,0,.3);
+  transform: translateY(-4px) !important;
+}
+.card-icon { font-size: 1.8rem; margin-bottom: 13px; display: block; }
+.card-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; line-height: 1; margin-bottom: 6px;
+}
+.card-num.r { color: var(--rose-l); }
+.card-num.g { color: var(--gold); }
+.card-num.w { color: var(--cream); }
+.card-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: 1.8px; color: var(--muted); }
+.card-sub { font-size: .77rem; color: var(--muted); margin-top: 5px; font-style: italic; }
+
+/* Timeline */
+.timeline {
+  margin-bottom: 48px; padding: 36px 32px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 24px;
+}
+.timeline h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; margin-bottom: 24px;
+}
+.tl-item {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  opacity: 0; transform: translateX(-10px);
+  transition: opacity .4s, transform .4s;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-item.in { opacity: 1; transform: translateX(0); }
+.tl-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--rose); flex-shrink: 0; margin-top: 6px;
+  box-shadow: 0 0 7px rgba(232,115,106,.5);
+}
+.tl-content { flex: 1; }
+.tl-date { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 3px; }
+.tl-text { font-size: .9rem; line-height: 1.5; }
+.tl-text span { color: var(--rose-l); font-weight: 500; }
+
+/* Quote */
+.quote-wrap { text-align: center; padding: 56px 24px; }
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2.8vw, 1.65rem);
+  font-style: italic; line-height: 1.7;
+}
+.quote-text span { color: var(--rose-l); }
+
+/* ─── POSTER PREVIEW ────────────────────── */
+.poster-section {
+  margin-bottom: 48px; text-align: center;
+}
+.poster-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; margin-bottom: 8px;
+}
+.poster-section p {
+  font-size: .82rem; color: var(--muted); margin-bottom: 28px;
+}
+.poster-frame {
+  display: inline-block;
+  background: #1a1010;
+  border: 3px solid #3a2a2a;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
+  max-width: 320px; width: 100%;
+}
+.poster-inner {
+  background: #faf7f2;
+  color: #1a1010;
+  padding: 32px 28px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  position: relative;
+  min-height: 420px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+}
+.poster-inner::before {
+  content:''; position:absolute; inset: 10px;
+  border: 1px solid rgba(26,16,16,.12);
+  pointer-events: none;
+}
+.poster-tagline {
+  font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
+  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-bottom: 12px;
+}
+.poster-couple {
+  font-size: 1.4rem; font-weight: 700; line-height: 1.2;
+  color: #1a1010;
+}
+.poster-since {
+  font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-top: 6px;
+}
+.poster-divider {
+  width: 40px; height: 1px; background: #c9a84c; margin: 16px auto;
+}
+.poster-stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  width: 100%; margin: 8px 0;
+}
+.poster-stat { text-align: center; }
+.poster-stat-num {
+  font-size: 1.3rem; font-weight: 700; color: #1a1010; line-height: 1;
+}
+.poster-stat-lbl {
+  font-size: 6.5px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-top: 3px;
+}
+.poster-bottom {
+  font-size: 7px; letter-spacing: 3px; text-transform: uppercase;
+  color: #c9a84c; font-family: 'Inter', sans-serif;
+}
+.poster-badge {
+  position: absolute; top: -12px; right: -12px;
+  background: var(--gold);
+  color: #1a1010; font-size: .65rem; font-weight: 700;
+  padding: 6px 12px; border-radius: 20px;
+  letter-spacing: 1px; text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ─── CTA ───────────────────────────────── */
+.cta {
+  text-align: center; padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(232,115,106,.06) 0%, rgba(201,168,76,.04) 100%);
+  border: 1px solid var(--rose-d); border-radius: 28px;
+  position: relative; overflow: hidden;
+}
+.cta::before {
+  content: ''; position: absolute; inset: -50%;
+  background: radial-gradient(circle at 50% 30%, rgba(232,115,106,.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-bottom: 12px;
+}
+.cta > p {
+  color: var(--muted); max-width: 440px; margin: 0 auto;
+  line-height: 1.75; font-size: .91rem; margin-bottom: 28px;
+}
+.spec-chips {
+  display: flex; gap: 10px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 32px;
+}
+.chip {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 16px;
+  font-size: .77rem; color: var(--muted);
+}
+.chip strong { color: var(--cream); }
+.cta-price-block {
+  margin-bottom: 20px;
+}
+.price-tag {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; color: var(--cream); line-height: 1;
+}
+.price-note { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+.cta-btns {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 16px;
+}
+.btn-ghost {
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border); font-family: 'Inter', sans-serif;
+  font-size: .8rem; padding: 14px 26px; border-radius: 50px;
+  cursor: pointer; transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--muted); color: var(--cream); }
+.trust-row {
+  display: flex; gap: 20px; justify-content: center;
+  flex-wrap: wrap; margin-top: 20px;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .74rem; color: var(--muted);
+}
+.trust-icon { font-size: .9rem; }
+
+/* ─── FAQ ───────────────────────────────── */
+.faq {
+  margin-top: 64px; padding-top: 64px;
+  border-top: 1px solid var(--border);
+}
+.faq h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; text-align: center; margin-bottom: 32px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.faq-q {
+  font-weight: 500; font-size: .93rem; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
+}
+.faq-arrow {
+  color: var(--muted); transition: transform .3s; flex-shrink: 0;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a {
+  font-size: .88rem; color: var(--muted); line-height: 1.75;
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease, padding .3s;
+}
+.faq-item.open .faq-a {
+  max-height: 200px; padding-top: 12px;
+}
+
+/* ─── ORDER MODAL ───────────────────────── */
+.overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,.8); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s;
+}
+.overlay.show { opacity: 1; pointer-events: all; }
+.modal {
+  background: #17100f;
+  border: 1px solid var(--rose-d);
+  border-radius: 28px; padding: 44px 40px;
+  max-width: 460px; width: 100%;
+  transform: translateY(20px);
+  transition: transform .3s;
+  position: relative;
+}
+.overlay.show .modal { transform: translateY(0); }
+.modal-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.4rem; cursor: pointer; line-height: 1;
+  transition: color .2s;
+}
+.modal-close:hover { color: var(--cream); }
+.modal h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; margin-bottom: 8px;
+}
+.modal > p {
+  font-size: .86rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: 28px;
+}
+.order-summary {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px 20px;
+  margin-bottom: 24px;
+}
+.order-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 6px 0;
+  font-size: .86rem;
+}
+.order-row:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,.04); padding-bottom: 10px; margin-bottom: 4px; }
+.order-row .lbl { color: var(--muted); }
+.order-row .val { color: var(--cream); font-weight: 500; }
+.order-row .val.price { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+.modal-fields { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+.modal-note {
+  font-size: .73rem; color: var(--muted);
+  text-align: center; margin-top: -4px;
+}
+
+/* ─── ANIMATIONS & UTILS ────────────────── */
+@keyframes up {
+  from { opacity:0; transform: translateY(24px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+@media (max-width: 580px) {
+  .form-card { padding: 28px 20px; }
+  .names-row { gap: 8px; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .ann-ring { gap: 10px; }
+  .hero-box { padding: 44px 20px; }
+  .cta { padding: 44px 20px; }
+  .modal { padding: 36px 24px; }
+  .how-divider { display: none; }
+  .poster-frame { max-width: 260px; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- ═══ ENTRY ═══ -->
+<div id="entry">
+  <div class="wrap">
+    <p class="eyebrow">Your love story, in numbers</p>
+    <h1 class="entry-h1">The Story of<br><em>Us</em></h1>
+    <p class="entry-sub">Discover the hidden numbers that make your relationship unique — then frame them forever.</p>
+
+    <div class="social-proof">
+      <span class="sp-stars">★★★★★</span>
+      <span class="sp-text">Loved by <strong>340+ couples</strong> worldwide</span>
+    </div>
+
+    <div class="form-card">
+      <div class="names-row">
+        <div class="field">
+          <label>Your name</label>
+          <input type="text" id="name1" placeholder="Ana" maxlength="18">
+        </div>
+        <span class="heart-sep">♥</span>
+        <div class="field">
+          <label>Their name</label>
+          <input type="text" id="name2" placeholder="João" maxlength="18">
+        </div>
+      </div>
+      <div class="field">
+        <label>The day you became "us"</label>
+        <input type="date" id="since">
+      </div>
+      <button class="btn-primary" onclick="generate()">Discover Our Numbers →</button>
+      <p class="form-note">Free to discover · No account needed</p>
+    </div>
+
+    <div class="how">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-label">Enter your names & date</div>
+      </div>
+      <div class="how-divider"></div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-label">See your unique numbers</div>
+      </div>
+      <div class="how-divider"></div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-label">Order your printed poster</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS ═══ -->
+<div id="results">
+  <div class="wrap">
+
+    <div class="r-header">
+      <p class="eyebrow">YOUR LOVE STORY</p>
+      <h2><span class="names" id="couple-names">—</span></h2>
+      <p id="since-str"></p>
+    </div>
+
+    <div class="hero-box">
+      <div class="hero-num" id="hero-num">0</div>
+      <div class="hero-lbl">Days of choosing each other</div>
+      <div class="hero-sub" id="hero-sub"></div>
+    </div>
+
+    <div class="ann-ring">
+      <div class="ann-card">
+        <div class="ann-num" id="next-ann-days">—</div>
+        <div class="ann-lbl">Days to next anniversary</div>
+      </div>
+      <div class="ann-card">
+        <div class="ann-num" id="yrs-together">—</div>
+        <div class="ann-lbl">Years together</div>
+      </div>
+      <div class="ann-card">
+        <div class="ann-num" id="seasons">—</div>
+        <div class="ann-lbl">Seasons shared</div>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="timeline" id="timeline-section">
+      <h3>Milestones you've already passed ✨</h3>
+      <div id="timeline"></div>
+    </div>
+
+    <div class="quote-wrap">
+      <p class="quote-text" id="quote"></p>
+    </div>
+
+    <!-- Poster Preview -->
+    <div class="poster-section">
+      <h3>This is what your poster looks like</h3>
+      <p>Premium A3 · 300gsm matte paper · Gold foil accents</p>
+      <div style="position:relative; display:inline-block;">
+        <div class="poster-frame">
+          <div class="poster-inner" id="poster-preview">
+            <div>
+              <div class="poster-tagline">A Love Story</div>
+              <div class="poster-couple" id="p-names">Ana & João</div>
+              <div class="poster-since" id="p-since">Since — — —</div>
+            </div>
+            <div class="poster-divider"></div>
+            <div class="poster-stats-grid" id="p-stats"></div>
+            <div class="poster-divider"></div>
+            <div class="poster-bottom">Us · In Numbers</div>
+          </div>
+        </div>
+        <div class="poster-badge">Your poster</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h3>Frame your love story</h3>
+      <p>A premium A3 poster with your unique numbers — beautifully typeset, printed and delivered to your door. The gift they'll hang on the wall forever.</p>
+      <div class="spec-chips">
+        <div class="chip">Format <strong>A3 · 420×297mm</strong></div>
+        <div class="chip">Paper <strong>300gsm Matte</strong></div>
+        <div class="chip">Finish <strong>Gold foil accents</strong></div>
+        <div class="chip">Ships <strong>3–5 days</strong></div>
+      </div>
+      <div class="cta-price-block">
+        <div class="price-tag">€29</div>
+        <div class="price-note">Free shipping worldwide · 30-day guarantee</div>
+      </div>
+      <div class="cta-btns">
+        <button class="btn-primary" style="max-width:280px;" onclick="openOrder()">Order Our Poster →</button>
+        <button class="btn-ghost" onclick="reset()">Try Different Names</button>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="trust-icon">🔒</span> Secure payment</div>
+        <div class="trust-item"><span class="trust-icon">✦</span> Made to order</div>
+        <div class="trust-item"><span class="trust-icon">↩</span> 30-day returns</div>
+        <div class="trust-item"><span class="trust-icon">🌍</span> Ships worldwide</div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+      <h3>Questions</h3>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is the poster really personalised with our names and numbers?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">Yes — every poster is made specifically for you. Your names, your anniversary date, and all the numbers calculated from your unique story. No two posters are the same.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What size and quality is the poster?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">A3 format (420 × 297mm / 16.5 × 11.7 inches), printed on 300gsm premium matte paper with gold foil accent details. It comes ready to frame.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does delivery take?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">Your poster is printed and shipped within 1–2 business days. Delivery takes 3–5 days within Europe, and 5–10 days internationally. You'll receive a tracking number by email.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I give this as a gift?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">Absolutely — it's one of the most thoughtful gifts you can give. You can enter a different shipping address at checkout so it goes straight to them. We also offer gift packaging.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What if I'm not happy with the result?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">We offer a full 30-day money-back guarantee. If for any reason you're not completely happy, just get in touch and we'll make it right.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ ORDER MODAL ═══ -->
+<div class="overlay" id="overlay" onclick="closeOrderIfOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOrder()">×</button>
+    <h3>Almost there ♥</h3>
+    <p>We just need a couple of details to personalise and ship your poster.</p>
+
+    <div class="order-summary" id="order-summary">
+      <div class="order-row">
+        <span class="lbl">Couple</span>
+        <span class="val" id="m-names">—</span>
+      </div>
+      <div class="order-row">
+        <span class="lbl">Anniversary</span>
+        <span class="val" id="m-date">—</span>
+      </div>
+      <div class="order-row">
+        <span class="lbl">Format</span>
+        <span class="val">A3 Poster · Gold foil</span>
+      </div>
+      <div class="order-row">
+        <span class="lbl">Total</span>
+        <span class="val price">€29</span>
+      </div>
+    </div>
+
+    <div class="modal-fields">
+      <div class="field">
+        <label>Your email address</label>
+        <input type="email" id="order-email" placeholder="your@email.com">
+      </div>
+      <div class="field">
+        <label>Shipping country</label>
+        <input type="text" id="order-country" placeholder="Portugal">
+      </div>
+    </div>
+    <p class="modal-note" style="margin-bottom:18px;">You'll be redirected to our secure checkout to complete payment.</p>
+    <button class="btn-primary" onclick="submitOrder()">Continue to Payment →</button>
+    <p class="modal-note" style="margin-top:12px;">🔒 Secure payment · 30-day guarantee · Free worldwide shipping</p>
+  </div>
+</div>
+
+<script>
+/* ── STARS ───────────────────────────────── */
+const C = document.getElementById('bg'), cx = C.getContext('2d');
+let pts = [];
+const rsz = () => { C.width=innerWidth; C.height=innerHeight; };
+const initP = () => { pts = Array.from({length:160}, () => ({
+  x: Math.random()*C.width, y: Math.random()*C.height,
+  r: Math.random()*.9+.15, o: Math.random()*.4+.05,
+  sp: Math.random()*.01+.003, ph: Math.random()*Math.PI*2,
+  warm: Math.random() > .6
+})); };
+const drawP = t => {
+  cx.clearRect(0,0,C.width,C.height);
+  pts.forEach(p => {
+    const o = p.o + Math.sin(t*.001*p.sp*60+p.ph)*.15;
+    cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    cx.fillStyle = p.warm ? `rgba(240,180,160,${o})` : `rgba(255,255,255,${o*.6})`;
+    cx.fill();
+  });
+  requestAnimationFrame(drawP);
+};
+rsz(); initP(); requestAnimationFrame(drawP);
+addEventListener('resize', ()=>{ rsz(); initP(); });
+
+/* ── HELPERS ─────────────────────────────── */
+const fmt = n => n.toLocaleString('en-US');
+
+function animCount(el, target, ms) {
+  const s = performance.now();
+  const f = t => {
+    const p = Math.min((t-s)/ms,1);
+    const e = 1 - Math.pow(1-p,3);
+    el.textContent = fmt(Math.floor(e*target));
+    if (p<1) requestAnimationFrame(f);
+  };
+  requestAnimationFrame(f);
+}
+
+function moonPhase(d) {
+  const ref = new Date(2000,0,6);
+  const phase = (((d-ref)/864e5)%29.53058+29.53058)%29.53058;
+  if (phase<1.85) return ['🌑','New Moon'];
+  if (phase<7.38) return ['🌒','Waxing Crescent'];
+  if (phase<9.22) return ['🌓','First Quarter'];
+  if (phase<14.77) return ['🌔','Waxing Gibbous'];
+  if (phase<16.61) return ['🌕','Full Moon'];
+  if (phase<22.15) return ['🌖','Waning Gibbous'];
+  if (phase<23.99) return ['🌗','Last Quarter'];
+  return ['🌘','Waning Crescent'];
+}
+
+/* ── STATE ───────────────────────────────── */
+let state = {};
+
+/* ── GENERATE ────────────────────────────── */
+function generate() {
+  const n1  = document.getElementById('name1').value.trim() || 'You';
+  const n2  = document.getElementById('name2').value.trim() || 'Them';
+  const val = document.getElementById('since').value;
+
+  if (!val) {
+    const el = document.getElementById('since');
+    el.style.borderColor='#e05555';
+    setTimeout(()=>el.style.borderColor='',1200);
+    return;
+  }
+
+  const since = new Date(val+'T00:00:00');
+  const today = new Date(); today.setHours(0,0,0,0);
+  if (since >= today) { alert('Please enter a past date.'); return; }
+
+  const days    = Math.floor((today-since)/864e5);
+  const weeks   = Math.floor(days/7);
+  const months  = Math.floor(days/30.44);
+  const yrs     = today.getFullYear()-since.getFullYear() -
+    (today < new Date(today.getFullYear(),since.getMonth(),since.getDate()) ? 1 : 0);
+  const mins    = days * 1440;
+  const totalHB = Math.floor(mins*70) + Math.floor(mins*72);
+  const moons   = Math.floor(days/29.53);
+  const seasons = Math.floor(days/91.25);
+  const meals   = Math.floor(days*2.1);
+  const hugs    = Math.floor(days*6);
+  const iloveyous = Math.floor(days*3);
+  const laughs  = Math.floor(days*14);
+  const photos  = Math.floor(days*1.4);
+  const [moonEmoji, moonName] = moonPhase(since);
+  const DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const dow = DOW[since.getDay()];
+
+  let nextAnn = new Date(today.getFullYear(), since.getMonth(), since.getDate());
+  if (nextAnn <= today) nextAnn.setFullYear(nextAnn.getFullYear()+1);
+  const daysAnn = Math.floor((nextAnn-today)/864e5);
+
+  // Save state for modal
+  state = { n1, n2, days, yrs, since: val, sinceFormatted:
+    since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) };
+
+  // Header
+  document.getElementById('couple-names').textContent = `${n1} & ${n2}`;
+  document.getElementById('since-str').textContent =
+    `Together since ${state.sinceFormatted} · A ${dow} · Under a ${moonName}`;
+  document.getElementById('hero-sub').textContent =
+    `${fmt(weeks)} weeks · ${fmt(months)} months · ${yrs} year${yrs!==1?'s':''} of choosing each other`;
+
+  // Ann ring (animated)
+  setTimeout(()=> animCount(document.getElementById('next-ann-days'), daysAnn===0?0:daysAnn, 1200), 400);
+  setTimeout(()=> {
+    const el = document.getElementById('yrs-together');
+    el.textContent = yrs;
+  }, 500);
+  setTimeout(()=> animCount(document.getElementById('seasons'), seasons, 1000), 600);
+
+  if (daysAnn === 0) document.getElementById('next-ann-days').textContent = '🎉';
+
+  // Cards
+  const cards = [
+    { icon:'💓', num:totalHB,   lbl:'Combined heartbeats',   sub:'Both hearts, beating for each other',  col:'r', cnt:true },
+    { icon:'🌕', num:moons,     lbl:'Full moons together',   sub:'One every 29.5 days',                  col:'w', cnt:true },
+    { icon:'😴', num:days,      lbl:'Nights side by side',   sub:'Every single one precious',            col:'w', cnt:true },
+    { icon:'🍽️', num:meals,     lbl:'Meals shared',          sub:'An average of 2 together per day',     col:'g', cnt:true },
+    { icon:'🤗', num:hugs,      lbl:'Hugs exchanged',        sub:'~6 hugs every day',                    col:'r', cnt:true },
+    { icon:'❤️', num:iloveyous, lbl:'"I love you"s said',   sub:'~3 times a day',                       col:'r', cnt:true },
+    { icon:'😂', num:laughs,    lbl:'Laughs shared',         sub:'~14 moments of joy per day',           col:'g', cnt:true },
+    { icon:'📸', num:photos,    lbl:'Photos together',       sub:'~1.4 per day on average',              col:'w', cnt:true },
+    { icon:moonEmoji, num:moonName, lbl:'Moon on day one',   sub:'The sky on your very first night',     col:'r', cnt:false },
+    { icon:'🗓️', num:fmt(weeks)+'wks', lbl:'Weeks of us',   sub:`${fmt(days)} days in total`,           col:'g', cnt:false },
+  ];
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  cards.forEach((c,i) => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `
+      <span class="card-icon">${c.icon}</span>
+      <div class="card-num ${c.col}">${c.cnt?'0':c.num}</div>
+      <div class="card-lbl">${c.lbl}</div>
+      <div class="card-sub">${c.sub}</div>`;
+    grid.appendChild(el);
+    setTimeout(() => {
+      el.classList.add('in');
+      if (c.cnt && typeof c.num==='number') {
+        animCount(el.querySelector('.card-num'), c.num, 1400);
+      }
+    }, i*110);
+  });
+
+  // Timeline
+  const milestones = [
+    { days:7,    text:`${n1} & ${n2} shared their <span>first 7 days</span> together` },
+    { days:30,   text:`The first full month — <span>30 days</span> of learning each other` },
+    { days:100,  text:`A milestone — <span>100 days</span> of building something real` },
+    { days:180,  text:`Half a year — <span>6 months</span> of growing closer` },
+    { days:365,  text:`The first anniversary — <span>one full year</span> of love` },
+    { days:500,  text:`<span>500 days</span> — a number not many reach` },
+    { days:730,  text:`Two full years — <span>730 days</span> of choosing each other` },
+    { days:1000, text:`<span>1,000 days</span> — a milestone worth celebrating` },
+    { days:1825, text:`Five years — <span>1,825 days</span> of a shared life` },
+    { days:3650, text:`A decade — <span>ten years</span> of an extraordinary love story` },
+  ].filter(m => m.days <= days);
+
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = '';
+  milestones.forEach((m,i) => {
+    const d = new Date(since.getTime() + m.days*864e5);
+    const el = document.createElement('div');
+    el.className = 'tl-item';
+    el.innerHTML = `
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-date">${d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</div>
+        <div class="tl-text">${m.text}</div>
+      </div>`;
+    tl.appendChild(el);
+    setTimeout(()=> el.classList.add('in'), 600+i*80);
+  });
+  document.getElementById('timeline-section').style.display = milestones.length ? '' : 'none';
+
+  // Quote
+  document.getElementById('quote').innerHTML =
+    `Between ${n1} and ${n2}, <span>${fmt(totalHB)}</span> heartbeats have passed in unison. ` +
+    `You have seen <span>${moons} full moons</span> rise together. ` +
+    `In <span>${days} days</span>, you have built something the universe had never seen before.`;
+
+  // Poster preview
+  document.getElementById('p-names').textContent = `${n1} & ${n2}`;
+  document.getElementById('p-since').textContent =
+    `Since ${since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}`;
+  const ps = document.getElementById('p-stats');
+  ps.innerHTML = [
+    [fmt(days), 'Days Together'],
+    [fmt(moons), 'Full Moons'],
+    [fmt(hugs), 'Hugs'],
+    [fmt(iloveyous), '"I love you"s'],
+  ].map(([n,l]) => `
+    <div class="poster-stat">
+      <div class="poster-stat-num">${n}</div>
+      <div class="poster-stat-lbl">${l}</div>
+    </div>`).join('');
+
+  // Show
+  document.getElementById('entry').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+  scrollTo(0,0);
+
+  setTimeout(()=> animCount(document.getElementById('hero-num'), days, 2600), 200);
+}
+
+/* ── ORDER MODAL ─────────────────────────── */
+function openOrder() {
+  document.getElementById('m-names').textContent = `${state.n1} & ${state.n2}`;
+  document.getElementById('m-date').textContent = state.sinceFormatted;
+  document.getElementById('overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeOrder() {
+  document.getElementById('overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+function closeOrderIfOutside(e) {
+  if (e.target === document.getElementById('overlay')) closeOrder();
+}
+function submitOrder() {
+  const email = document.getElementById('order-email').value.trim();
+  const country = document.getElementById('order-country').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('order-email').style.borderColor='#e05555';
+    setTimeout(()=>document.getElementById('order-email').style.borderColor='',1200);
+    return;
+  }
+  // TODO: link to Stripe payment link with prefilled email
+  // window.location.href = `https://buy.stripe.com/YOUR_LINK?prefilled_email=${encodeURIComponent(email)}`;
+  alert(`✅ Almost there!\n\nWe've noted your order for ${state.n1} & ${state.n2}.\nWe'll send the payment link to ${email} within a few minutes.\n\nThank you! ♥`);
+  closeOrder();
+}
+
+/* ── FAQ ─────────────────────────────────── */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ── RESET ───────────────────────────────── */
+function reset() {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('entry').style.display = 'flex';
+  document.getElementById('timeline-section').style.display = '';
+  scrollTo(0,0);
+}
+</script>
+</body>
+</html>
