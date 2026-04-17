@@ -314,28 +314,80 @@ input:focus {
 .poster-section > p {
   font-size: .85rem; color: var(--muted); margin-bottom: 36px;
 }
+
+/* Room scene */
+.room-scene {
+  position: relative; overflow: hidden;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg,
+      #c8bfb2 0%,
+      #bfb5a6 55%,
+      #a89880 56%,
+      #8a7a66 100%);
+  padding: 48px 0 0;
+  display: flex; flex-direction: column;
+  align-items: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,.5);
+  user-select: none; -webkit-user-select: none;
+}
+/* Wall texture */
+.room-scene::before {
+  content:''; position:absolute; inset:0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0,0,0,.015) 40px, rgba(0,0,0,.015) 41px),
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,0,0,.015) 40px, rgba(0,0,0,.015) 41px);
+  pointer-events:none;
+}
+/* Ambient light from above */
+.room-scene::after {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:60%; height:200px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,240,210,.25) 0%, transparent 70%);
+  pointer-events:none;
+}
+/* Floor line */
+.room-floor {
+  width:100%; height: 48px;
+  background: linear-gradient(180deg, #8a7a66 0%, #6b5c48 100%);
+  position: relative;
+}
+.room-floor::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, transparent, rgba(255,240,200,.3), transparent);
+}
+
+/* Frame on wall */
 .poster-wrap {
   position: relative; display: inline-block;
+  transform: perspective(1000px) rotateY(-1.5deg);
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.45)) drop-shadow(0 4px 8px rgba(0,0,0,.3));
+  margin-bottom: 0;
+  pointer-events: none;
 }
-.poster-glow {
-  position: absolute; inset: -20px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(232,115,106,.15) 0%, transparent 65%);
-  pointer-events: none; border-radius: 50%;
+.poster-badge {
+  pointer-events: all;
 }
 .poster-frame {
   display: inline-block;
-  background: #2a1a18;
-  border: 4px solid #3d2520;
-  border-radius: 3px;
-  padding: 16px;
-  box-shadow: 0 32px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,200,180,.06);
-  max-width: 340px; width: 100%;
-  position: relative; z-index: 1;
+  background: #1c1208;
+  border: 6px solid #2a1c0e;
+  border-bottom-width: 10px;
+  border-radius: 2px;
+  padding: 10px;
+  max-width: 280px; width: 100%;
+  position: relative;
+}
+/* Frame inner gold line */
+.poster-frame::before {
+  content:''; position:absolute; inset:16px;
+  border: 1px solid rgba(201,168,76,.2);
+  pointer-events:none; z-index:0;
 }
 .poster-inner {
   background: #fdfaf5;
   color: #1a1010;
-  padding: 28px 24px 24px;
+  padding: 24px 20px 20px;
   font-family: 'Playfair Display', serif;
   text-align: center;
   position: relative;
@@ -343,11 +395,19 @@ input:focus {
   align-items: center; gap: 0;
 }
 .poster-inner::before {
-  content:''; position:absolute; inset: 8px;
+  content:''; position:absolute; inset: 7px;
   border: 1px solid rgba(26,16,16,.1);
   pointer-events: none; z-index: 0;
 }
 .poster-inner > * { position: relative; z-index: 1; }
+
+/* Room label */
+.room-label {
+  position: absolute; bottom: 56px; right: 20px;
+  font-size: .68rem; color: rgba(255,255,255,.4);
+  letter-spacing: 1px; font-style: italic;
+  pointer-events: none;
+}
 
 /* Poster elements */
 .p-eyebrow {
@@ -707,8 +767,9 @@ input:focus {
       <p class="poster-section-label">Your poster preview</p>
       <h3>This is what they'll hang on the wall</h3>
       <p>Every number is real. Every number is yours.</p>
-      <div class="poster-wrap">
-        <div class="poster-glow"></div>
+      <div class="room-scene">
+        <div class="room-label">your wall</div>
+        <div class="poster-wrap">
         <div class="poster-frame">
           <div class="poster-inner" id="poster-preview">
             <div class="p-eyebrow">A Love Story</div>
@@ -736,6 +797,8 @@ input:focus {
           </div>
         </div>
         <div class="poster-badge">Your poster</div>
+        </div>
+        <div class="room-floor"></div>
       </div>
       <div class="share-row">
         <button class="btn-share" onclick="shareStory()">
