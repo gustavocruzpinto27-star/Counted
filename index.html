@@ -301,78 +301,143 @@ input:focus {
 
 /* ─── POSTER PREVIEW ────────────────────── */
 .poster-section {
-  margin-bottom: 48px; text-align: center;
+  margin-bottom: 56px; text-align: center;
+}
+.poster-section-label {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 10px;
 }
 .poster-section h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.05rem; margin-bottom: 8px;
+  font-size: 1.6rem; margin-bottom: 8px;
 }
-.poster-section p {
-  font-size: .82rem; color: var(--muted); margin-bottom: 28px;
+.poster-section > p {
+  font-size: .85rem; color: var(--muted); margin-bottom: 36px;
+}
+.poster-wrap {
+  position: relative; display: inline-block;
+}
+.poster-glow {
+  position: absolute; inset: -20px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(232,115,106,.15) 0%, transparent 65%);
+  pointer-events: none; border-radius: 50%;
 }
 .poster-frame {
   display: inline-block;
-  background: #1a1010;
-  border: 3px solid #3a2a2a;
-  border-radius: 4px;
-  padding: 20px;
-  box-shadow: 0 24px 64px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
-  max-width: 320px; width: 100%;
+  background: #2a1a18;
+  border: 4px solid #3d2520;
+  border-radius: 3px;
+  padding: 16px;
+  box-shadow: 0 32px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,200,180,.06);
+  max-width: 340px; width: 100%;
+  position: relative; z-index: 1;
 }
 .poster-inner {
-  background: #faf7f2;
+  background: #fdfaf5;
   color: #1a1010;
-  padding: 32px 28px;
+  padding: 28px 24px 24px;
   font-family: 'Playfair Display', serif;
   text-align: center;
   position: relative;
-  min-height: 420px;
   display: flex; flex-direction: column;
-  align-items: center; justify-content: space-between;
+  align-items: center; gap: 0;
 }
 .poster-inner::before {
-  content:''; position:absolute; inset: 10px;
-  border: 1px solid rgba(26,16,16,.12);
-  pointer-events: none;
+  content:''; position:absolute; inset: 8px;
+  border: 1px solid rgba(26,16,16,.1);
+  pointer-events: none; z-index: 0;
 }
-.poster-tagline {
-  font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
-  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-bottom: 12px;
+.poster-inner > * { position: relative; z-index: 1; }
+
+/* Poster elements */
+.p-eyebrow {
+  font-size: 6.5px; letter-spacing: 5px; text-transform: uppercase;
+  color: #b08060; font-family: 'Inter', sans-serif;
+  margin-bottom: 10px;
 }
-.poster-couple {
-  font-size: 1.4rem; font-weight: 700; line-height: 1.2;
-  color: #1a1010;
+.p-names {
+  font-size: 1.55rem; font-weight: 700; line-height: 1.1;
+  color: #1a1010; margin-bottom: 7px;
 }
-.poster-since {
-  font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
-  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-top: 6px;
+.p-date-line {
+  font-size: 7px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: #a08070; font-family: 'Inter', sans-serif;
+  margin-bottom: 14px; line-height: 1.8;
 }
-.poster-divider {
-  width: 40px; height: 1px; background: #c9a84c; margin: 16px auto;
+.p-rule {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  margin: 10px 0;
 }
-.poster-stats-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-  width: 100%; margin: 8px 0;
+.p-rule::before, .p-rule::after {
+  content:''; flex:1; height: 1px; background: rgba(192,140,90,.35);
 }
-.poster-stat { text-align: center; }
-.poster-stat-num {
-  font-size: 1.3rem; font-weight: 700; color: #1a1010; line-height: 1;
+.p-rule-gem {
+  font-size: 8px; color: #c9a84c;
 }
-.poster-stat-lbl {
-  font-size: 6.5px; letter-spacing: 1.5px; text-transform: uppercase;
-  color: #8a6a6a; font-family: 'Inter', sans-serif; margin-top: 3px;
+
+/* Hero heartbeat */
+.p-hero {
+  margin: 4px 0 2px;
 }
-.poster-bottom {
-  font-size: 7px; letter-spacing: 3px; text-transform: uppercase;
-  color: #c9a84c; font-family: 'Inter', sans-serif;
+.p-hero-num {
+  font-size: 2rem; font-weight: 700; color: #1a1010;
+  line-height: 1; letter-spacing: -1px;
+}
+.p-hero-lbl {
+  font-size: 6px; letter-spacing: 3px; text-transform: uppercase;
+  color: #b08060; font-family: 'Inter', sans-serif; margin-top: 5px;
+}
+
+/* Stats grid */
+.p-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px 16px; width: 100%; margin: 4px 0;
+}
+.p-stat { text-align: center; padding: 4px 0; }
+.p-stat-num {
+  font-size: 1.05rem; font-weight: 700; color: #1a1010; line-height: 1;
+}
+.p-stat-lbl {
+  font-size: 6px; letter-spacing: 2px; text-transform: uppercase;
+  color: #a08070; font-family: 'Inter', sans-serif; margin-top: 3px;
+}
+
+/* Poetic line */
+.p-quote {
+  font-style: italic; font-size: .72rem; color: #7a6060;
+  line-height: 1.6; margin: 4px 0; max-width: 220px;
+}
+
+.p-footer {
+  font-size: 6px; letter-spacing: 4px; text-transform: uppercase;
+  color: #c9a84c; font-family: 'Inter', sans-serif; margin-top: 6px;
+}
+
+/* Share row */
+.share-row {
+  display: flex; gap: 12px; justify-content: center;
+  margin-top: 24px; flex-wrap: wrap;
+}
+.btn-share {
+  background: transparent;
+  border: 1px solid var(--rose-d);
+  color: var(--rose-l); font-family: 'Inter', sans-serif;
+  font-size: .8rem; padding: 12px 24px; border-radius: 50px;
+  cursor: pointer; transition: all .25s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-share:hover {
+  background: rgba(232,115,106,.08);
+  border-color: rgba(232,115,106,.4);
 }
 .poster-badge {
-  position: absolute; top: -12px; right: -12px;
+  position: absolute; top: -14px; right: -14px; z-index: 2;
   background: var(--gold);
-  color: #1a1010; font-size: .65rem; font-weight: 700;
-  padding: 6px 12px; border-radius: 20px;
+  color: #1a1010; font-size: .62rem; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
   letter-spacing: 1px; text-transform: uppercase;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(201,168,76,.4);
 }
 
 /* ─── CTA ───────────────────────────────── */
@@ -639,23 +704,46 @@ input:focus {
 
     <!-- Poster Preview -->
     <div class="poster-section">
-      <h3>This is what your poster looks like</h3>
-      <p>Premium A3 · 300gsm matte paper · Gold foil accents</p>
-      <div style="position:relative; display:inline-block;">
+      <p class="poster-section-label">Your poster preview</p>
+      <h3>This is what they'll hang on the wall</h3>
+      <p>Every number is real. Every number is yours.</p>
+      <div class="poster-wrap">
+        <div class="poster-glow"></div>
         <div class="poster-frame">
           <div class="poster-inner" id="poster-preview">
-            <div>
-              <div class="poster-tagline">A Love Story</div>
-              <div class="poster-couple" id="p-names">Ana & João</div>
-              <div class="poster-since" id="p-since">Since — — —</div>
+            <div class="p-eyebrow">A Love Story</div>
+            <div class="p-names" id="p-names">Ana &amp; João</div>
+            <div class="p-date-line" id="p-dateline">Since — · — · —</div>
+
+            <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+            <div class="p-hero">
+              <div class="p-hero-num" id="p-hb">—</div>
+              <div class="p-hero-lbl">Heartbeats for each other</div>
             </div>
-            <div class="poster-divider"></div>
-            <div class="poster-stats-grid" id="p-stats"></div>
-            <div class="poster-divider"></div>
-            <div class="poster-bottom">Us · In Numbers</div>
+
+            <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+            <div class="p-grid" id="p-grid"></div>
+
+            <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+            <div class="p-quote" id="p-quote-line"></div>
+
+            <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+            <div class="p-footer">Us · In Numbers · Counted™</div>
           </div>
         </div>
         <div class="poster-badge">Your poster</div>
+      </div>
+      <div class="share-row">
+        <button class="btn-share" onclick="shareStory()">
+          <span>↗</span> Share your story
+        </button>
+        <button class="btn-share" onclick="copyLink()">
+          <span>⎘</span> Copy link
+        </button>
       </div>
     </div>
 
@@ -955,19 +1043,31 @@ function generate() {
     `In <span>${days} days</span>, you have built something the universe had never seen before.`;
 
   // Poster preview
+  const sinceStr = since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('p-names').textContent = `${n1} & ${n2}`;
-  document.getElementById('p-since').textContent =
-    `Since ${since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}`;
-  const ps = document.getElementById('p-stats');
-  ps.innerHTML = [
-    [fmt(days), 'Days Together'],
-    [fmt(moons), 'Full Moons'],
-    [fmt(hugs), 'Hugs'],
+  document.getElementById('p-dateline').innerHTML =
+    `Since ${sinceStr}<br>${dow} · ${moonEmoji} ${moonName}`;
+  document.getElementById('p-hb').textContent = fmt(totalHB);
+
+  const universeBillions = 13.8;
+  const poemLines = [
+    `You found each other in a universe ${universeBillions} billion years in the making.`,
+    `In ${fmt(days)} days, you built something the universe had never seen.`,
+    `${fmt(moons)} moons have risen since your story began.`,
+  ];
+  document.getElementById('p-quote-line').textContent = poemLines[Math.floor(Math.random()*poemLines.length)];
+
+  document.getElementById('p-grid').innerHTML = [
+    [fmt(days),   'Days together'],
+    [fmt(moons),  'Full moons'],
+    [fmt(hugs),   'Hugs shared'],
     [fmt(iloveyous), '"I love you"s'],
+    [fmt(meals),  'Meals shared'],
+    [fmt(photos), 'Photos taken'],
   ].map(([n,l]) => `
-    <div class="poster-stat">
-      <div class="poster-stat-num">${n}</div>
-      <div class="poster-stat-lbl">${l}</div>
+    <div class="p-stat">
+      <div class="p-stat-num">${n}</div>
+      <div class="p-stat-lbl">${l}</div>
     </div>`).join('');
 
   // Show
@@ -1012,6 +1112,35 @@ function toggleFaq(el) {
   const wasOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
+}
+
+/* ── SHARE ───────────────────────────────── */
+function shareStory() {
+  const text = `${state.n1} & ${state.n2} — our hearts have beaten ${fmt(Math.floor(state.days*1440*70) + Math.floor(state.days*1440*72))} times for each other 💓`;
+  if (navigator.share) {
+    navigator.share({ title: 'Our Story in Numbers', text, url: 'https://counted-sage.vercel.app' });
+  } else {
+    navigator.clipboard.writeText(text + '\n\nhttps://counted-sage.vercel.app');
+    showToast('Copied to clipboard! Share it ♥');
+  }
+}
+function copyLink() {
+  navigator.clipboard.writeText('https://counted-sage.vercel.app');
+  showToast('Link copied! ✓');
+}
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.style.cssText = `position:fixed;bottom:32px;left:50%;transform:translateX(-50%);
+      background:#1a1010;border:1px solid rgba(232,115,106,.3);color:#f0ece4;
+      padding:14px 28px;border-radius:50px;font-size:.85rem;z-index:200;
+      box-shadow:0 8px 32px rgba(0,0,0,.4);transition:opacity .3s;`;
+    document.body.appendChild(t);
+  }
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(() => t.style.opacity = '0', 2500);
 }
 
 /* ── RESET ───────────────────────────────── */
