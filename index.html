@@ -315,128 +315,73 @@ input:focus {
   font-size: .85rem; color: var(--muted); margin-bottom: 36px;
 }
 
-/* ─── ROOM SCENE ─────────────────────────── */
-.poster-section {
-  margin-bottom: 56px; text-align: center;
-}
-.poster-section-label {
-  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--rose); margin-bottom: 10px;
-}
-.poster-section h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem; margin-bottom: 8px;
-}
-.poster-section > p {
-  font-size: .85rem; color: var(--muted); margin-bottom: 36px;
-}
-
-.room-scene {
+/* ─── POSTER SHOWCASE ─────────────────────── */
+.poster-showcase {
   position: relative; overflow: hidden;
-  border-radius: 20px; width: 100%;
-  aspect-ratio: 16 / 9;
-  background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=85&fit=crop') center 35% / cover no-repeat;
-  box-shadow: 0 32px 80px rgba(0,0,0,.5);
+  border-radius: 24px;
+  background: linear-gradient(170deg, #18100d 0%, #0c0809 50%, #160e08 100%);
+  padding: 64px 40px 52px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 40px 80px rgba(0,0,0,.6);
   user-select: none; -webkit-user-select: none;
 }
-
-/* Wall glow behind poster */
-.room-wall-glow {
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 55%; height: 75%;
-  background: radial-gradient(ellipse at 50% 40%, rgba(255,245,220,.7) 0%, transparent 70%);
+/* Spotlight from above */
+.poster-showcase::before {
+  content: '';
+  position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+  width: 65%; height: 280px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.2) 0%, transparent 55%);
   pointer-events: none;
 }
-
-/* Ceiling */
-.room-ceiling {
-  width: 100%; height: 12px;
-  background: linear-gradient(180deg, #d4cdc4 0%, #ede8e0 100%);
-  flex-shrink: 0;
+/* Floor reflection */
+.poster-showcase::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 100%);
+  pointer-events: none;
 }
-
-/* Chandelier */
-.chandelier {
+/* Hanging wires */
+.showcase-wire {
   position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center;
-  z-index: 2; pointer-events: none;
+  width: 200px; height: 60px;
+  pointer-events: none; z-index: 1;
 }
-.ch-wire {
-  width: 2px; height: 28px;
-  background: linear-gradient(180deg, #b8a880, #c9a84c);
+.showcase-wire::before,
+.showcase-wire::after {
+  content: '';
+  position: absolute; top: 0; height: 60px; width: 1.5px;
+  background: linear-gradient(180deg, rgba(180,150,80,.5) 0%, rgba(180,150,80,.15) 100%);
 }
-.ch-body {
-  width: 60px; height: 16px;
-  background: linear-gradient(135deg, #e8d48a, #c9a84c, #e8d48a);
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(201,168,76,.4), 0 0 24px rgba(255,240,160,.3);
-  position: relative;
-}
-.ch-body::before {
-  content:'';
-  position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
-  width: 0; height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 14px solid #c9a84c;
-}
-.ch-gems {
-  display: flex; gap: 6px; margin-top: 4px;
-}
-.ch-gem {
-  width: 4px; height: 12px;
-  background: linear-gradient(180deg, rgba(201,168,76,.8), rgba(255,240,160,.9));
-  border-radius: 2px;
-}
-.ch-light {
-  width: 80px; height: 40px;
-  background: radial-gradient(ellipse, rgba(255,240,180,.5) 0%, transparent 70%);
-  margin-top: 4px;
-}
-
-/* Poster on wall */
-.room-poster-area {
-  position: absolute; top: 5%; left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-/* Poster scaled down to look like real wall art */
-.room-scene .poster-frame {
-  max-width: 148px;
-}
-.room-scene .poster-inner {
-  padding: 13px 10px 10px;
-}
-.room-scene .p-names { font-size: 1rem; }
-.room-scene .p-hero-num { font-size: 1.3rem; letter-spacing: -.5px; }
-.room-scene .p-grid { gap: 5px 10px; }
-.room-scene .p-stat-num { font-size: .85rem; }
-.room-scene .p-quote { font-size: .6rem; }
-.room-scene .p-hero { margin: 2px 0 0; }
+.showcase-wire::before { left: calc(50% - 36px); transform: rotate(5deg); transform-origin: top; }
+.showcase-wire::after  { right: calc(50% - 36px); transform: rotate(-5deg); transform-origin: top; }
 
 .poster-wrap {
   position: relative; display: inline-block;
-  transform: perspective(1400px) rotateY(-1deg) rotateX(1.5deg);
-  filter: drop-shadow(0 36px 72px rgba(0,0,0,.65)) drop-shadow(0 6px 14px rgba(0,0,0,.4));
+  transform: perspective(1600px) rotateY(-3deg) rotateX(1deg);
+  filter: drop-shadow(0 48px 80px rgba(0,0,0,.8)) drop-shadow(0 10px 24px rgba(0,0,0,.5));
   pointer-events: none;
+  z-index: 2;
 }
 .poster-badge { pointer-events: all; }
 
 .poster-frame {
   display: inline-block;
-  background: #1c1208;
-  border: 7px solid #2e1f0c;
-  border-bottom-width: 12px;
+  background: #1a1006;
+  border: 9px solid #261608;
+  border-bottom-width: 16px;
   border-radius: 2px;
-  padding: 8px;
-  max-width: 215px; width: 100%;
+  padding: 9px;
+  max-width: 280px; width: 100%;
   position: relative;
-  box-shadow: inset 0 0 0 1px rgba(201,168,76,.15);
+  box-shadow:
+    inset 0 0 0 1px rgba(201,168,76,.2),
+    inset 0 2px 4px rgba(255,240,200,.06),
+    3px 0 12px rgba(0,0,0,.5);
 }
 .poster-inner {
   background: #fdfaf5;
   color: #1a1010;
-  padding: 22px 18px 18px;
+  padding: 24px 20px 20px;
   font-family: 'Playfair Display', serif;
   text-align: center;
   position: relative;
@@ -444,142 +389,11 @@ input:focus {
   align-items: center; gap: 0;
 }
 .poster-inner::before {
-  content:''; position:absolute; inset: 7px;
+  content:''; position:absolute; inset: 8px;
   border: 1px solid rgba(26,16,16,.1);
   pointer-events: none; z-index: 0;
 }
 .poster-inner > * { position: relative; z-index: 1; }
-
-/* Furniture area */
-.room-furniture {
-  width: 100%; position: relative;
-  height: 140px; flex-shrink: 0; margin-top: 16px;
-}
-
-/* Floor */
-.room-floor-bg {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 50px;
-  background: linear-gradient(180deg, #b8a888 0%, #9a8868 100%);
-}
-/* Floor shine */
-.room-floor-bg::after {
-  content:''; position:absolute; top:0; left:0; right:0; height:2px;
-  background: linear-gradient(90deg, transparent 5%, rgba(255,240,200,.4) 50%, transparent 95%);
-}
-
-/* Sofa */
-.sofa {
-  position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
-  width: 88%; max-width: 560px;
-}
-.sofa-back {
-  height: 44px;
-  background: linear-gradient(180deg, #d8d4cc 0%, #c8c4bc 100%);
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 -2px 8px rgba(0,0,0,.1);
-  display: flex; gap: 3px; padding: 6px;
-  align-items: flex-start;
-}
-.sofa-cushion-back {
-  flex: 1; height: 100%;
-  background: linear-gradient(180deg, #dedad2 0%, #c4c0b8 100%);
-  border-radius: 6px 6px 0 0;
-}
-.sofa-seat {
-  height: 26px;
-  background: linear-gradient(180deg, #ccc8c0 0%, #bab6ae 100%);
-  border-radius: 0 0 4px 4px;
-  display: flex; gap: 3px; padding: 3px;
-}
-.sofa-seat-cushion {
-  flex: 1;
-  background: linear-gradient(180deg, #d0ccc4 0%, #bab6ae 100%);
-  border-radius: 0 0 3px 3px;
-}
-.sofa-legs {
-  display: flex; justify-content: space-between; padding: 0 12px;
-}
-.sofa-leg {
-  width: 8px; height: 10px;
-  background: #8a7a60;
-  border-radius: 0 0 3px 3px;
-}
-
-/* Cushions */
-.cushion {
-  position: absolute;
-  border-radius: 4px;
-}
-.cushion-left {
-  width: 28px; height: 26px;
-  background: linear-gradient(135deg, #d4a840, #c49030);
-  bottom: 76px; left: calc(6% + 12px);
-  transform: rotate(-8deg);
-  box-shadow: 1px 2px 4px rgba(0,0,0,.2);
-}
-.cushion-right {
-  width: 24px; height: 22px;
-  background: linear-gradient(135deg, #e8e0d4, #d0c8bc);
-  bottom: 77px; right: calc(6% + 16px);
-  transform: rotate(6deg);
-  box-shadow: 1px 2px 4px rgba(0,0,0,.15);
-}
-
-/* Coffee table */
-.coffee-table {
-  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
-  width: 120px;
-}
-.ct-top {
-  height: 6px;
-  background: linear-gradient(180deg, rgba(180,160,120,.6), rgba(140,120,90,.4));
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  border: 1px solid rgba(180,160,120,.3);
-}
-.ct-leg {
-  width: 2px; height: 20px;
-  background: linear-gradient(180deg, rgba(160,140,100,.6), rgba(120,100,70,.4));
-  margin: 0 auto;
-}
-
-/* Vases */
-.vase {
-  position: absolute; bottom: 48px;
-}
-.vase-left {
-  left: calc(50% - 200px);
-}
-.vase-right {
-  right: calc(50% - 200px);
-}
-.vase-body {
-  width: 12px; height: 28px;
-  border-radius: 3px 3px 6px 6px;
-  margin: 0 auto;
-}
-.vase-left .vase-body {
-  background: linear-gradient(180deg, rgba(140,180,140,.7), rgba(100,140,100,.5));
-  height: 32px;
-}
-.vase-right .vase-body {
-  background: linear-gradient(180deg, rgba(200,190,160,.8), rgba(160,150,120,.6));
-  width: 10px; height: 24px;
-}
-.vase-neck {
-  width: 8px; height: 6px;
-  background: inherit;
-  border-radius: 2px 2px 0 0;
-  margin: 0 auto;
-}
-
-/* Room label */
-.room-label {
-  position: absolute; bottom: 14px; right: 16px;
-  font-size: .62rem; color: rgba(255,255,255,.4);
-  letter-spacing: 1px; font-style: italic;
-  pointer-events: none;
-}
 
 /* Poster elements */
 .p-eyebrow {
@@ -939,39 +753,37 @@ input:focus {
       <p class="poster-section-label">Your poster preview</p>
       <h3>This is what they'll hang on the wall</h3>
       <p>Every number is real. Every number is yours.</p>
-      <div class="room-scene">
-        <div class="room-poster-area">
-          <div class="poster-wrap">
-            <div class="poster-frame">
-              <div class="poster-inner" id="poster-preview">
-                <div class="p-eyebrow">A Love Story</div>
-                <div class="p-names" id="p-names">Ana &amp; João</div>
-                <div class="p-date-line" id="p-dateline">Since — · — · —</div>
+      <div class="poster-showcase">
+        <div class="showcase-wire"></div>
+        <div class="poster-wrap">
+          <div class="poster-frame">
+            <div class="poster-inner" id="poster-preview">
+              <div class="p-eyebrow">A Love Story</div>
+              <div class="p-names" id="p-names">Ana &amp; João</div>
+              <div class="p-date-line" id="p-dateline">Since — · — · —</div>
 
-                <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
 
-                <div class="p-hero">
-                  <div class="p-hero-num" id="p-hb">—</div>
-                  <div class="p-hero-lbl">Heartbeats for each other</div>
-                </div>
-
-                <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-                <div class="p-grid" id="p-grid"></div>
-
-                <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-                <div class="p-quote" id="p-quote-line"></div>
-
-                <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-
-                <div class="p-footer">Us · In Numbers · Counted™</div>
+              <div class="p-hero">
+                <div class="p-hero-num" id="p-hb">—</div>
+                <div class="p-hero-lbl">Heartbeats for each other</div>
               </div>
+
+              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+              <div class="p-grid" id="p-grid"></div>
+
+              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+              <div class="p-quote" id="p-quote-line"></div>
+
+              <div class="p-rule"><span class="p-rule-gem">✦</span></div>
+
+              <div class="p-footer">Us · In Numbers · Counted™</div>
             </div>
-            <div class="poster-badge">Your poster</div>
           </div>
+          <div class="poster-badge">Your poster</div>
         </div>
-        <div class="room-label">your wall</div>
       </div>
       <div class="share-row">
         <button class="btn-share" onclick="shareStory()">
