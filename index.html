@@ -1302,8 +1302,9 @@ function generate() {
   });
   document.getElementById('timeline-section').style.display = milestones.length ? '' : 'none';
 
-  // Quote
-  document.getElementById('quote').innerHTML =
+  // Quote (element removed from visible HTML but kept for data)
+  const quoteEl = document.getElementById('quote');
+  if (quoteEl) quoteEl.innerHTML =
     `Between ${n1} and ${n2}, <span>${fmt(totalHB)}</span> heartbeats have passed in unison. ` +
     `You have seen <span>${moons} full moons</span> rise together. ` +
     `In <span>${days} days</span>, you have built something the universe had never seen before.`;
