@@ -1100,10 +1100,9 @@ function submitOrder() {
     setTimeout(()=>document.getElementById('order-email').style.borderColor='',1200);
     return;
   }
-  // TODO: link to Stripe payment link with prefilled email
-  // window.location.href = `https://buy.stripe.com/YOUR_LINK?prefilled_email=${encodeURIComponent(email)}`;
-  alert(`✅ Almost there!\n\nWe've noted your order for ${state.n1} & ${state.n2}.\nWe'll send the payment link to ${email} within a few minutes.\n\nThank you! ♥`);
+  const stripeUrl = `https://buy.stripe.com/test_5kQ5kEehP0Figjp6up83C00?prefilled_email=${encodeURIComponent(email)}&locale=auto`;
   closeOrder();
+  window.location.href = stripeUrl;
 }
 
 /* ── FAQ ─────────────────────────────────── */
