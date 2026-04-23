@@ -3,20 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Us in Numbers — Frame Your Love Story</title>
-<meta name="description" content="Enter your names and anniversary date. Discover the beautiful numbers of your relationship — then frame them forever as a premium art poster.">
+<meta name="theme-color" content="#0c0809">
+<title>Counted — Your love story, in numbers</title>
+<meta name="description" content="The most personal gift you'll ever give. Enter your names and anniversary date — discover the hidden numbers of your love story and frame them forever as a premium A3 poster.">
+<meta name="keywords" content="personalised poster, couple gift, anniversary gift, love story poster, valentine's day, custom print, relationship numbers">
+<meta name="author" content="Counted">
+<link rel="canonical" href="https://counted.love/">
 
-<!-- OG / Social sharing -->
-<meta property="og:title" content="Us in Numbers — Frame Your Love Story">
-<meta property="og:description" content="How many heartbeats? How many full moons? How many nights? Discover the hidden numbers of your relationship.">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph — Facebook, WhatsApp, LinkedIn, Discord -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://counted-sage.vercel.app">
+<meta property="og:site_name" content="Counted">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://counted.love/">
+<meta property="og:title" content="Counted — Your love story, in numbers">
+<meta property="og:description" content="Discover the hidden numbers of your relationship — then frame them forever as a premium A3 poster. The most personal gift you'll ever give.">
+<meta property="og:image" content="https://counted.love/og-image.jpg">
+<meta property="og:image:secure_url" content="https://counted.love/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A Counted poster showing a couple's relationship in numbers — heartbeats, moons, nights — printed on premium A3 matte paper with gold foil accents.">
+
+<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Us in Numbers — Frame Your Love Story">
-<meta name="twitter:description" content="The most personal gift you'll ever give. A premium poster with the unique numbers of your love story.">
+<meta name="twitter:title" content="Counted — Your love story, in numbers">
+<meta name="twitter:description" content="Discover the hidden numbers of your relationship. A personalised poster you'll want to frame forever.">
+<meta name="twitter:image" content="https://counted.love/og-image.jpg">
+<meta name="twitter:image:alt" content="Counted personalised love story poster">
+
+<!-- Structured data — Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Counted — Personalised Love Story Poster",
+  "description": "A premium A3 poster made specifically for you — with the unique numbers of your relationship. 300gsm matte paper, gold foil accents, ships worldwide.",
+  "brand": { "@type": "Brand", "name": "Counted" },
+  "image": "https://counted.love/og-image.jpg",
+  "url": "https://counted.love/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Digital PDF",
+      "price": "15.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://counted.love/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Printed A3 Poster (Digital PDF included)",
+      "price": "29.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://counted.love/"
+    }
+  ]
+}
+</script>
+
+<!--
+  ═══ ANALYTICS ═══ (GDPR-friendly, no cookies, no banner required)
+
+  Pick ONE provider, uncomment its script, replace the placeholder:
+
+  OPTION A — Plausible (€9/mo, hosted EU, simplest)
+  Sign up → plausible.io → add site → copy script
+  <script defer data-domain="counted.love" src="https://plausible.io/js/script.js"></script>
+
+  OPTION B — Umami Cloud (free tier 10k events/month, EU-hosted)
+  Sign up → cloud.umami.is → add site → copy data-website-id
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
+
+  OPTION C — Cloudflare Web Analytics (100% free, unlimited)
+  Sign up → dash.cloudflare.com → Web Analytics → add site → copy token
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+
+  The track() helper in the main script auto-detects Plausible or Umami.
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 <style>
 :root {
   --bg: #0c0809;
@@ -169,6 +244,135 @@ input:focus {
   flex-shrink: 0;
 }
 
+/* How it looks — real poster showcase */
+.showcase {
+  padding: 90px 0 40px;
+  text-align: center;
+}
+.showcase-eyebrow {
+  font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 14px;
+}
+.showcase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2; margin-bottom: 10px;
+}
+.showcase-title em { color: var(--rose-l); font-style: italic; }
+.showcase-sub {
+  color: var(--muted); font-size: .92rem;
+  max-width: 440px; margin: 0 auto 48px; line-height: 1.7;
+}
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.showcase-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px; overflow: hidden;
+  background: linear-gradient(135deg, rgba(232,115,106,.06), rgba(201,168,76,.04));
+  border: 1px solid var(--border);
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+}
+.showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232,115,106,.25);
+  box-shadow: 0 18px 48px rgba(0,0,0,.35);
+}
+.showcase-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+}
+.showcase-card .sc-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px; padding: 24px;
+  color: var(--muted); text-align: center;
+}
+.sc-placeholder-icon {
+  font-size: 1.8rem; opacity: .55;
+}
+.sc-placeholder-text {
+  font-size: .7rem; letter-spacing: 2.5px;
+  text-transform: uppercase; opacity: .6;
+}
+.showcase-caption {
+  margin-top: 32px; font-size: .78rem;
+  color: var(--muted); font-style: italic;
+}
+/* Site footer */
+.site-footer {
+  position: relative; z-index: 1;
+  padding: 48px 24px 40px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,.3);
+  text-align: center;
+}
+.site-footer-inner {
+  max-width: 760px; margin: 0 auto;
+  display: flex; flex-direction: column;
+  gap: 14px; align-items: center;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; color: var(--cream);
+  letter-spacing: 4px;
+}
+.footer-links {
+  display: flex; gap: 28px; flex-wrap: wrap; justify-content: center;
+}
+.footer-links a {
+  font-size: .76rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-legal {
+  font-size: .72rem; color: var(--muted); opacity: .7;
+  max-width: 520px; line-height: 1.7;
+}
+.showcase-sample {
+  margin-top: 36px;
+  padding: 28px 32px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+  text-align: left;
+}
+.sample-text { flex: 1; min-width: 200px; }
+.sample-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; margin-bottom: 4px;
+}
+.sample-sub { font-size: .78rem; color: var(--muted); line-height: 1.55; }
+.sample-btn {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-size: .75rem; letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 13px 24px; border-radius: 50px;
+  text-decoration: none; white-space: nowrap;
+  transition: background .25s, color .25s, transform .2s;
+}
+.sample-btn:hover {
+  background: var(--gold); color: #0c0809;
+  transform: translateY(-2px);
+}
+@media (max-width: 720px) {
+  .showcase-grid { grid-template-columns: 1fr 1fr; }
+  .showcase-card:nth-child(3) { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .showcase { padding: 60px 0 20px; }
+}
+
 /* ─── RESULTS ───────────────────────────── */
 #results { display:none; padding: 80px 0 120px; }
 
@@ -213,6 +417,23 @@ input:focus {
 /* Ann ring */
 .ann-ring {
   display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.teaser-intro {
+  text-align: center;
+  margin: 36px 0 18px;
+}
+.teaser-eyebrow {
+  font-size: 10px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold);
+}
+#grid-teaser {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 0;
+}
+@media (max-width: 640px) {
+  #grid-teaser { grid-template-columns: 1fr; gap: 12px; }
 }
 .ann-card {
   flex: 1; min-width: 160px;
@@ -788,6 +1009,17 @@ input:focus {
   to   { opacity:1; transform: translateY(0); }
 }
 
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  canvas#bg { display: none; }
+}
+
 @media (max-width: 580px) {
   .form-card { padding: 28px 20px; }
   .names-row { gap: 8px; }
@@ -813,8 +1045,8 @@ input:focus {
     <p class="entry-sub">Discover the hidden numbers that make your relationship unique — then frame them forever.</p>
 
     <div class="social-proof">
-      <span class="sp-stars">★★★★★</span>
-      <span class="sp-text">Loved by <strong>340+ couples</strong> worldwide</span>
+      <span class="sp-stars">✦</span>
+      <span class="sp-text">Printed in Portugal · <strong>Ships worldwide</strong></span>
     </div>
 
     <div class="form-card">
@@ -853,6 +1085,50 @@ input:focus {
         <div class="how-label">Order your printed poster</div>
       </div>
     </div>
+
+    <!-- ═══ SHOWCASE: real posters ═══ -->
+    <!-- Substitui os <div class="sc-placeholder"> por <img> quando tiveres as fotos reais.
+         Usa sempre:  loading="lazy" decoding="async" width="800" height="1000"
+         Ex:  <img src="img/poster-wall.jpg" alt="Counted poster..." loading="lazy" decoding="async" width="800" height="1000"> -->
+    <section class="showcase">
+      <p class="showcase-eyebrow">How it looks</p>
+      <h2 class="showcase-title">Framed, <em>and hung</em></h2>
+      <p class="showcase-sub">A3, 300gsm premium matte, gold foil accents. Made to be seen — and kept forever.</p>
+
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <!-- <img src="img/poster-wall.jpg" alt="Counted poster framed on a bedroom wall" loading="lazy" decoding="async" width="800" height="1000"> -->
+          <div class="sc-placeholder">
+            <span class="sc-placeholder-icon">🖼️</span>
+            <span class="sc-placeholder-text">Poster · Wall</span>
+          </div>
+        </div>
+        <div class="showcase-card">
+          <!-- <img src="img/poster-hands.jpg" alt="Counted poster held in hand, close-up of gold foil" loading="lazy" decoding="async" width="800" height="1000"> -->
+          <div class="sc-placeholder">
+            <span class="sc-placeholder-icon">✨</span>
+            <span class="sc-placeholder-text">Detail · Gold foil</span>
+          </div>
+        </div>
+        <div class="showcase-card">
+          <!-- <img src="img/poster-gift.jpg" alt="Counted poster gift-wrapped beside flowers" loading="lazy" decoding="async" width="800" height="1000"> -->
+          <div class="sc-placeholder">
+            <span class="sc-placeholder-icon">🎁</span>
+            <span class="sc-placeholder-text">Gift · Unwrapped</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="showcase-caption">Every poster is made specifically for you — no two are the same.</p>
+
+      <div class="showcase-sample">
+        <div class="sample-text">
+          <div class="sample-title">See the real thing</div>
+          <div class="sample-sub">Download a full-resolution sample PDF — the exact format you'll receive. Free, no email needed.</div>
+        </div>
+        <a class="sample-btn" href="samples/counted-sample.pdf" download target="_blank" rel="noopener" onclick="track('sample_downloaded')">↓ Download Sample</a>
+      </div>
+    </section>
   </div>
 </div>
 
@@ -885,27 +1161,35 @@ input:focus {
 
     <div class="hero-box">
       <div class="hero-num" id="hero-num">0</div>
-      <div class="hero-lbl">Combined heartbeats — for each other</div>
+      <div class="hero-lbl">Heartbeats together</div>
       <div class="hero-sub" id="hero-sub"></div>
     </div>
+
+    <!-- VISIBLE: meta stats -->
+    <div class="ann-ring">
+      <div class="ann-card">
+        <div class="ann-num" id="next-ann-days">—</div>
+        <div class="ann-lbl">Days to next anniversary</div>
+      </div>
+      <div class="ann-card">
+        <div class="ann-num" id="yrs-together">—</div>
+        <div class="ann-lbl">Years together</div>
+      </div>
+      <div class="ann-card">
+        <div class="ann-num" id="seasons">—</div>
+        <div class="ann-lbl">Seasons shared</div>
+      </div>
+    </div>
+
+    <!-- VISIBLE: teaser (3 of your numbers) -->
+    <div class="teaser-intro">
+      <span class="teaser-eyebrow">A taste of your story</span>
+    </div>
+    <div class="grid" id="grid-teaser"></div>
 
     <!-- LOCKED CONTENT -->
     <div class="locked-wall">
       <div class="locked-content">
-        <div class="ann-ring">
-          <div class="ann-card">
-            <div class="ann-num" id="next-ann-days">—</div>
-            <div class="ann-lbl">Days to next anniversary</div>
-          </div>
-          <div class="ann-card">
-            <div class="ann-num" id="yrs-together">—</div>
-            <div class="ann-lbl">Years together</div>
-          </div>
-          <div class="ann-card">
-            <div class="ann-num" id="seasons">—</div>
-            <div class="ann-lbl">Seasons shared</div>
-          </div>
-        </div>
         <div class="grid" id="grid"></div>
         <div class="timeline" id="timeline-section">
           <h3>Milestones you've already passed ✨</h3>
@@ -923,14 +1207,14 @@ input:focus {
                   <div class="p-rule"><span class="p-rule-gem">✦</span></div>
                   <div class="p-hero">
                     <div class="p-hero-num" id="p-hb">—</div>
-                    <div class="p-hero-lbl">Heartbeats for each other</div>
+                    <div class="p-hero-lbl">Heartbeats together</div>
                   </div>
                   <div class="p-rule"><span class="p-rule-gem">✦</span></div>
                   <div class="p-grid" id="p-grid"></div>
                   <div class="p-rule"><span class="p-rule-gem">✦</span></div>
                   <div class="p-quote" id="p-quote-line"></div>
                   <div class="p-rule"><span class="p-rule-gem">✦</span></div>
-                  <div class="p-footer">Us · In Numbers · Counted™</div>
+                  <div class="p-footer">Us · In Numbers · Counted</div>
                 </div>
               </div>
               <div class="poster-badge">Your poster</div>
@@ -943,8 +1227,8 @@ input:focus {
       <div class="unlock-overlay">
         <div class="unlock-card">
           <span class="unlock-icon">🔒</span>
-          <h3>Your numbers are ready</h3>
-          <p>How many full moons? How many hugs? How many times did you say "I love you"? Enter your email and choose how you want your story.</p>
+          <h3>There's more to your story</h3>
+          <p>How many times did you say "I love you"? How many laughs? How many photos? Plus your full milestone timeline and a custom poster preview — ready to keep.</p>
           <div class="unlock-email-wrap">
             <input type="email" id="unlock-email" placeholder="your@email.com">
           </div>
@@ -952,13 +1236,13 @@ input:focus {
             <div class="price-opt" onclick="goToStripe('digital')">
               <div class="price-opt-label">Digital PDF</div>
               <div class="price-opt-sub">High-res file<br>Delivered today</div>
-              <div class="price-opt-price">€12</div>
+              <div class="price-opt-price">€15</div>
               <span class="price-opt-cta">Choose →</span>
             </div>
             <div class="price-opt featured" onclick="goToStripe('poster')">
-              <div class="popular-tag">⭐ Popular</div>
+              <div class="popular-tag">⭐ Most loved · Best value</div>
               <div class="price-opt-label">Printed Poster</div>
-              <div class="price-opt-sub">A3 · 300gsm<br>Ships in 3–5 days</div>
+              <div class="price-opt-sub">A3 · 300gsm · Digital PDF included<br>Ships in 3–5 days</div>
               <div class="price-opt-price">€29</div>
               <span class="price-opt-cta">Choose →</span>
             </div>
@@ -967,7 +1251,7 @@ input:focus {
           <div class="unlock-trust">
             <span class="unlock-trust-item">🔒 Secure payment</span>
             <span class="unlock-trust-item">✦ Made just for you</span>
-            <span class="unlock-trust-item">↩ 30-day guarantee</span>
+            <span class="unlock-trust-item">↩ Reprint if damaged</span>
             <span class="unlock-trust-item">🌍 Ships worldwide</span>
           </div>
         </div>
@@ -1007,15 +1291,28 @@ input:focus {
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          What if I'm not happy with the result?
+          What if my poster arrives damaged or with a printing error?
           <span class="faq-arrow">▾</span>
         </div>
-        <div class="faq-a">We offer a full 30-day money-back guarantee. If for any reason you're not completely happy, just get in touch and we'll make it right.</div>
+        <div class="faq-a">If your poster arrives damaged or with a printing error, we'll reprint and ship a replacement at no cost — or refund you in full. Just email us with a photo and we'll make it right. Since each poster is personalised, we can't offer returns for change of mind.</div>
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand">C O U N T E D</div>
+    <div class="footer-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:hello@counted.love">Contact</a>
+    </div>
+    <p class="footer-legal">© <span id="footer-year"></span> Counted · Your love story, in numbers · Made in Portugal</p>
+  </div>
+</footer>
 
 <!-- ═══ ORDER MODAL ═══ -->
 <div class="overlay" id="overlay" onclick="closeOrderIfOutside(event)">
@@ -1035,7 +1332,7 @@ input:focus {
       </div>
       <div class="order-row">
         <span class="lbl">Format</span>
-        <span class="val">A3 Poster · Gold foil</span>
+        <span class="val">A3 Poster · Gold foil · PDF included</span>
       </div>
       <div class="order-row">
         <span class="lbl">Total</span>
@@ -1062,9 +1359,13 @@ input:focus {
 <script>
 /* ── STARS ───────────────────────────────── */
 const C = document.getElementById('bg'), cx = C.getContext('2d');
-let pts = [];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobile = innerWidth < 640;
+const PARTICLE_COUNT = reduceMotion ? 0 : (isMobile ? 80 : 160);
+let pts = [], rafId = null, running = false;
+
 const rsz = () => { C.width=innerWidth; C.height=innerHeight; };
-const initP = () => { pts = Array.from({length:160}, () => ({
+const initP = () => { pts = Array.from({length: PARTICLE_COUNT}, () => ({
   x: Math.random()*C.width, y: Math.random()*C.height,
   r: Math.random()*.9+.15, o: Math.random()*.4+.05,
   sp: Math.random()*.01+.003, ph: Math.random()*Math.PI*2,
@@ -1078,13 +1379,81 @@ const drawP = t => {
     cx.fillStyle = p.warm ? `rgba(240,180,160,${o})` : `rgba(255,255,255,${o*.6})`;
     cx.fill();
   });
-  requestAnimationFrame(drawP);
+  rafId = requestAnimationFrame(drawP);
 };
-rsz(); initP(); requestAnimationFrame(drawP);
-addEventListener('resize', ()=>{ rsz(); initP(); });
+const startAnim = () => { if (!running && PARTICLE_COUNT > 0) { running = true; rafId = requestAnimationFrame(drawP); } };
+const stopAnim  = () => { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } running = false; };
+
+rsz(); initP(); startAnim();
+addEventListener('resize', () => { rsz(); initP(); });
+document.addEventListener('visibilitychange', () => {
+  document.hidden ? stopAnim() : startAnim();
+});
 
 /* ── HELPERS ─────────────────────────────── */
 const fmt = n => n.toLocaleString('en-US');
+
+/* ── ANALYTICS ───────────────────────────── */
+/* Auto-detects Plausible / Umami. Silently no-ops if no provider loaded. */
+function track(event, props) {
+  try {
+    if (typeof plausible === 'function') {
+      plausible(event, props ? { props } : undefined);
+    } else if (typeof umami !== 'undefined' && umami.track) {
+      umami.track(event, props);
+    }
+  } catch (e) { /* never break UX for analytics */ }
+}
+
+/* ── ORDER NOTIFICATION ──────────────────── */
+/*
+  Fires when user clicks Stripe checkout. Posts the order details to
+  CONFIG.orderWebhookUrl so you know which names/date/email to personalise.
+
+  SETUP OPTIONS (pick one):
+
+  A) FORMSPREE (recommended MVP — free up to 50/mo)
+     1. Sign up at formspree.io
+     2. Create new form → copy endpoint like https://formspree.io/f/xxxxx
+     3. Paste it in CONFIG.orderWebhookUrl below
+     4. Every order emails you instantly with the data
+
+  B) MAKE.COM / ZAPIER (if you want automation workflows)
+     Create "Webhooks" scenario → copy URL → paste below.
+     Can then forward to Google Sheets + Gmail + Canva etc.
+
+  C) RESEND (transactional — needs a serverless function on Vercel)
+     Add /api/order endpoint using Resend SDK and use its URL below.
+     See: https://resend.com/docs/send-with-nodejs
+
+  D) Leave empty ('') and skip — Stripe receipt still reaches customer,
+     you just won't get pre-payment notification. Not recommended for launch.
+*/
+const CONFIG = {
+  orderWebhookUrl: 'https://formspree.io/f/mojyylvy',
+};
+
+function notifyOrder(tier, email) {
+  if (!CONFIG.orderWebhookUrl) return Promise.resolve();
+  const payload = {
+    tier,
+    email,
+    name_1: state._n1,
+    name_2: state._n2,
+    anniversary: state._val,
+    heroHeartbeats: document.getElementById('hero-num').textContent,
+    quiz: quizAnswers,
+    submittedAt: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+  };
+  // fire-and-forget; we don't block the Stripe redirect on this
+  return fetch(CONFIG.orderWebhookUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload),
+    keepalive: true,
+  }).catch(() => {});
+}
 
 function animCount(el, target, ms) {
   const s = performance.now();
@@ -1182,6 +1551,7 @@ function startQuiz() {
   document.getElementById('quiz').style.display = 'block';
   scrollTo(0,0);
   showQuestion(0);
+  track('quiz_started');
 }
 
 function showQuestion(idx) {
@@ -1217,6 +1587,7 @@ function answerQ(qIdx, optIdx) {
     showQuestion(qIdx + 1);
   } else {
     document.getElementById('quiz').style.display = 'none';
+    track('quiz_completed');
     generate();
   }
 }
@@ -1256,9 +1627,9 @@ function generate() {
   if (nextAnn <= today) nextAnn.setFullYear(nextAnn.getFullYear()+1);
   const daysAnn = Math.floor((nextAnn-today)/864e5);
 
-  // Save state for modal
-  state = { n1, n2, days, yrs, since: val, sinceFormatted:
-    since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) };
+  // Save state for modal + share (preserve _n1/_n2/_val from quiz)
+  Object.assign(state, { n1, n2, days, yrs, since: val, sinceFormatted:
+    since.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) });
 
   // Header
   document.getElementById('couple-names').textContent = `${n1} & ${n2}`;
@@ -1294,13 +1665,15 @@ function generate() {
                    : quizAnswers.totalPhotos >= 100  ? 'Every photo tells your story'
                    : 'The best ones live in your memory';
 
-  // Cards
-  const cards = [
-    { icon:'💓', num:totalHB,   lbl:'Combined heartbeats',   sub:'Both hearts, beating for each other',  col:'r', cnt:true },
+  // Cards — heartbeats already shown in hero, so not repeated here.
+  // First 3 = teaser (visible). Remaining 6 = locked behind paywall.
+  const teaserCards = [
     { icon:'🌕', num:moons,     lbl:'Full moons together',   sub:'One every 29.5 days',                  col:'w', cnt:true },
     { icon:'😴', num:days,      lbl:'Nights side by side',   sub:'Every single one precious',            col:'w', cnt:true },
-    { icon:'🍽️', num:meals,     lbl:'Meals shared',          sub:mealsSub,                               col:'g', cnt:true },
     { icon:'🤗', num:hugs,      lbl:'Hugs exchanged',        sub:hugsSub,                                col:'r', cnt:true },
+  ];
+  const lockedCards = [
+    { icon:'🍽️', num:meals,     lbl:'Meals shared',          sub:mealsSub,                               col:'g', cnt:true },
     { icon:'❤️', num:iloveyous, lbl:'"I love you"s said',   sub:ilySub,                                 col:'r', cnt:true },
     { icon:'😂', num:laughs,    lbl:'Laughs shared',         sub:'Joy woven into every single day',      col:'g', cnt:true },
     { icon:'📸', num:photos,    lbl:'Photos together',       sub:photosSub,                              col:'w', cnt:true },
@@ -1308,24 +1681,29 @@ function generate() {
     { icon:'🗓️', num:fmt(weeks)+'wks', lbl:'Weeks of us',   sub:`${fmt(days)} days in total`,           col:'g', cnt:false },
   ];
 
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  cards.forEach((c,i) => {
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = `
-      <span class="card-icon">${c.icon}</span>
-      <div class="card-num ${c.col}">${c.cnt?'0':c.num}</div>
-      <div class="card-lbl">${c.lbl}</div>
-      <div class="card-sub">${c.sub}</div>`;
-    grid.appendChild(el);
-    setTimeout(() => {
-      el.classList.add('in');
-      if (c.cnt && typeof c.num==='number') {
-        animCount(el.querySelector('.card-num'), c.num, 1400);
-      }
-    }, i*110);
-  });
+  function renderCards(containerId, cardList, delayOffset) {
+    const grid = document.getElementById(containerId);
+    grid.innerHTML = '';
+    cardList.forEach((c,i) => {
+      const el = document.createElement('div');
+      el.className = 'card';
+      el.innerHTML = `
+        <span class="card-icon">${c.icon}</span>
+        <div class="card-num ${c.col}">${c.cnt?'0':c.num}</div>
+        <div class="card-lbl">${c.lbl}</div>
+        <div class="card-sub">${c.sub}</div>`;
+      grid.appendChild(el);
+      setTimeout(() => {
+        el.classList.add('in');
+        if (c.cnt && typeof c.num==='number') {
+          animCount(el.querySelector('.card-num'), c.num, 1400);
+        }
+      }, delayOffset + i*110);
+    });
+  }
+
+  renderCards('grid-teaser', teaserCards, 0);
+  renderCards('grid',        lockedCards, 350);
 
   // Timeline
   const milestones = [
@@ -1397,6 +1775,7 @@ function generate() {
   document.getElementById('entry').style.display = 'none';
   document.getElementById('results').style.display = 'block';
   scrollTo(0,0);
+  track('results_viewed', { years: yrs });
 
   setTimeout(()=> animCount(document.getElementById('hero-num'), totalHB, 2800), 200);
 }
@@ -1413,9 +1792,11 @@ function goToStripe(type) {
     return;
   }
   const links = {
-    digital: 'https://buy.stripe.com/aFafZh0Lu93Ab2b91X5J601',
+    digital: 'https://buy.stripe.com/cNi28r65O6Vs9Y71zv5J602',
     poster:  'https://buy.stripe.com/aFafZh51KenUgmvfql5J600'
   };
+  track('checkout_clicked', { tier: type });
+  notifyOrder(type, email);
   window.location.href = `${links[type]}?prefilled_email=${encodeURIComponent(email)}&locale=auto`;
 }
 
@@ -1430,15 +1811,17 @@ function toggleFaq(el) {
 /* ── SHARE ───────────────────────────────── */
 function shareStory() {
   const text = `${state.n1} & ${state.n2} — our hearts have beaten ${fmt(Math.floor(state.days*1440*70) + Math.floor(state.days*1440*72))} times for each other 💓`;
+  const url = location.origin;
+  track('share_clicked');
   if (navigator.share) {
-    navigator.share({ title: 'Our Story in Numbers', text, url: 'https://counted-sage.vercel.app' });
+    navigator.share({ title: 'Our Story in Numbers', text, url });
   } else {
-    navigator.clipboard.writeText(text + '\n\nhttps://counted-sage.vercel.app');
+    navigator.clipboard.writeText(text + '\n\n' + url);
     showToast('Copied to clipboard! Share it ♥');
   }
 }
 function copyLink() {
-  navigator.clipboard.writeText('https://counted-sage.vercel.app');
+  navigator.clipboard.writeText(location.origin);
   showToast('Link copied! ✓');
 }
 function showToast(msg) {
@@ -1465,6 +1848,7 @@ function reset() {
   state = {}; quizAnswers = {};
   scrollTo(0,0);
 }
+document.getElementById('footer-year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
